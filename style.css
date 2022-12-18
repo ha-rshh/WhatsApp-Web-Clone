@@ -59,3 +59,110 @@ body {
   background: url(https://camo.githubusercontent.com/854a93c27d64274c4f8f5a0b6ec36ee1d053cfcd934eac6c63bed9eaef9764bd/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67);
   opacity: 0.5;
 }
+
+/* style for icon container */
+
+.icons-container {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f2f5;
+}
+
+.profile-pic {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  margin: 1em 1em;
+  background-color: #f0f2f5;
+}
+
+.profile-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.icons {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  color: #54656f;
+}
+
+.search {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+}
+
+.search-box {
+  position: relative;
+  border: none;
+  width: 85%;
+  margin-top: .6em;
+
+}
+
+.search-icon {
+  position: absolute;
+  top: .5em;
+  left: 1.5em;
+  font-size: 1.2rem;
+}
+
+.input-box {
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  color: #f0f2f5;
+  background-color: #f0f2f5;
+  padding: .7em;
+  font-size: 1rem;
+}
+
+.filter {
+  font-size: 2rem;
+  margin-top: .4em;
+  /* background-color: #00a884; */
+  width: 10%;
+  text-align: center;
+  /* color: white; */
+}
+
+ /* Here the styling for Contact list */
+
+ .contact-list{
+  height: 75vh;
+  overflow-y:scroll;
+  
+}
+.person{
+  width: 100%;  
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.person-img-details{
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.person-msg{
+  min-width: 100%;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
