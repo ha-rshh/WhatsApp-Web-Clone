@@ -120,9 +120,10 @@ body {
 }
 
 .input-box {
+  margin-left: 0.3rem;
   width: 100%;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 25px;
   border: none;
   color: #f0f2f5;
   background-color: #f0f2f5;
