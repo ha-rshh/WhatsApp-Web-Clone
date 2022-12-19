@@ -69,6 +69,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f0f2f5;
+  position: relative;
 }
 
 .profile-pic {
@@ -137,6 +138,37 @@ body {
   text-align: center;
   /* color: white; */
 }
+.menu-list{
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+.menu-list>ul{
+  position: absolute;
+  background-color:#ffffff;
+  
+  padding: 1em;
+  line-height: 2; 
+  font-size: 1.2rem;
+  border: 1px solid rgba(190, 184, 184, 0.377);
+  top: 25px;
+  left:85px;
+  transition: .01s;
+  list-style: none;
+  cursor: pointer;
+  transition: .01s;
+}
+#menu-list>ul>li{
+  width: 124%;
+  margin-left: -20px;
+  padding-left: 1em ;
+   
+}
+
+#menu-list>ul>li:hover{
+  background-color: rgba(240, 234, 234, 0.671);
+}
+
 
  /* Here the styling for Contact list */
 
