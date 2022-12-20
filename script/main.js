@@ -9,6 +9,8 @@ const contactList = document.querySelector(".contact-list");
 const profilePic = document.querySelector(".profile-img");
 const profileContainer = document.getElementById("profile-container");
 const profIcon = document.querySelector(".prof-icon");
+const statusIcon = document.querySelector('.status');
+
 
 
 inputBox.addEventListener("click", ()=>{
@@ -78,6 +80,10 @@ console.log(profIcon)
 //   console.log(e)
 // })
   
+statusIcon.addEventListener('click',()=>{
+  window.location.href = "http://127.0.0.1:5501/statuspage.html";
+});
+
 
 
 
