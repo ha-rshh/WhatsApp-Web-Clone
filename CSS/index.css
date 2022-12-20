@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #ccc;
+}
+
+.background-green {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20%;
+  background-color: #009688;
+}
+
+.main-container {
+  position: relative;
+  width: 98%;
+  max-width: 100%;
+  height: calc(100vh - 2rem);
+  background: #555;
+  display: flex;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.main-container .left-container {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  flex: 30%;
+  background: #fff;
+
+}
+
+.main-container .right-container {
+  position: relative;
+  width: 70%;
+  height: 100%;
+  flex: 70%;
+  background: #e5ddd5;
+}
+
+.main-container .right-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background: url(https://camo.githubusercontent.com/854a93c27d64274c4f8f5a0b6ec36ee1d053cfcd934eac6c63bed9eaef9764bd/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67);*/
+  opacity: 0.5;
+  
+}
+
+/* style for icon container */
+
+.icons-container {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f2f5;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 50px;
+  border-radius: 50%;
+  height: 50px;
+  margin: 1em 1em;
+  background-color: #f0f2f5;
+}
+
+.profile-img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.icons {
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+  color: #54656f;
+}
+
+.search {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+}
+
+.search-box {
+  position: relative;
+  border: none;
+  width: 85%;
+  margin-top: .6em;
+
+}
+
+.search-icon {
+  position: absolute;
+  top: .5em;
+  left: 1.5em;
+  font-size: 1.2rem;
+}
+
+.input-box {
+  margin-left: 0.3rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 25px;
+  border: none;
+  color: #f0f2f5;
+  background-color: #f0f2f5;
+  padding: .7em;
+  font-size: 1rem;
+  color: black;
+}
+
+.filter {
+  font-size: 2rem;
+  margin-top: .5em;
+  width: 10%;
+  text-align: center;
+  /* background-color: #00a884; */
+  border-radius: 50%;
+  color:black;
+  cursor: pointer;
+}
+
+.menu-list{
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+#menu-list>ul{
+  position: absolute;
+  background-color:#ffffff;
+  
+  padding: 1em;
+  line-height: 2; 
+  font-size: 1.2rem;
+  border: 1px solid rgba(190, 184, 184, 0.377);
+  top: 60px;
+  right:35px;
+  transition: .01s;
+  list-style: none;
+  cursor: pointer;
+  transition: .01s;
+  border-radius: 10px;
+  box-shadow:#555;
+  transition: 0.2s;
+}
+#menu-list>ul>li{
+  width: 124%;
+  margin-left: -20px;
+  padding-left: 1em ;
+   
+}
+
+#menu-list>ul>li:hover{
+  background-color: rgba(240, 234, 234, 0.671);
+}
+
+.hide{
+  display: none;
+}
+.grp-menu{
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.input-box{
+  outline: none;
+}
+
+
+#filter-msg_para{
+  color:#009688 ;
+  width:100%;
+  padding: 1em;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  
+  border-bottom:1px solid rgba(190, 184, 184, 0.377); 
+}
+.filter-img{
+  width: 50px;
+  margin-left: 20px;
+  padding: 1em 0;
+}
+.flex{
+  display: flex;
+  
+}
+.grp-details{
+  margin-left: 30px;
+  margin-right: 184px;
+  padding: 1em 0;
+}
+.msg-count{
+   background-color: #00a884;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   border-radius: 50%;
+   width: 15%;
+   margin-left: 50px;
+   
+}
+#msg-drp{
+  margin-left: 10px;
+  
+  
+}
+.person-lastTime{
+  padding: 1em 0;
+}
+
+/* style for profile */
+
+#profile-container{
+  position: absolute;
+  top: 0;
+  background-color: #f0f2f5;
+  display: none;
+  transition: 5s;
+}
+.prof{
+  background-color: #008069;
+  width: 365%;
+  padding-top: 3em;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.prof-icon{
+  padding: 1em;
+}
+.pro{
+  padding: 1em 1em;
+}
+.profile-picture{
+  background-color: #f0f2f5;
+  height: 40vh;
+  width: 365%;
+}
+.profile-picture_img{
+  margin: 2em 6em;
+  border-radius: 50%;
+  width: 15%;
+  transition: .02s;
+}
+.profile-name{
+  background-color: #ffffff;
+  width: 100%;
+}
+.name{
+  color: #008069;
+  padding: 1em 2em;
+  font-size: 1.1rem;
+
+}
+.profile-user_name{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  font-size: 1.2rem;
+  
+}
+.warn{
+  padding: 1em 2em 1em ;
+  color: rgb(165, 162, 162);
+}
+.about{
+  background-color:#ffffff ;
+}
+.about-para{
+  padding: 1em 2em;
+  color: #008069;
+  font-size: 1.1rem;
+}
+.about-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  font-size: 1.2rem;
+}
+
+
+ /* Here the styling for Contact list */
+
+ .contact-list{
+  height: 75vh;
+  overflow-y:scroll;
+  
+}
+.person{
+  width: 100%;  
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+.person-img-details{
+  width: 10vw;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.person-name{
+  width: 40vw;
+}
+.person-lastTime{
+width: 15vw;
+}
+
+::-webkit-scrollbar{
+  width: 0px;
+}
+
+
+
+
+
+
+
+
+
+
+/* Here the Styling of Default-Right-container */
+
+.right-most-container{
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,Helvetica;
+  background-color:rgb(240,242,245);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top:100px;
+  box-sizing: border-box;
+
+}
+
+.default-content{
+  width: 32vw;
+  color: gray;
+  font-weight: lighter;
+  font-size: .9rem;
+  text-align:center;
+}
+.default-bottom{
+  padding-top:100px;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
