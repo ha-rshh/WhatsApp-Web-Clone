@@ -39,6 +39,7 @@ body {
   height: 100%;
   flex: 30%;
   background: #fff;
+
 }
 
 .main-container .right-container {
@@ -70,6 +71,8 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f0f2f5;
+  position: relative;
+  cursor: pointer;
 }
 
 .profile-pic {
@@ -129,16 +132,179 @@ body {
   background-color: #f0f2f5;
   padding: .7em;
   font-size: 1rem;
+  color: black;
 }
 
 .filter {
   font-size: 2rem;
-  margin-top: .4em;
-  /* background-color: #00a884; */
+  margin-top: .5em;
   width: 10%;
   text-align: center;
-  /* color: white; */
+  /* background-color: #00a884; */
+  border-radius: 50%;
+  color:black;
+  cursor: pointer;
 }
+
+.menu-list{
+  position: absolute;
+  top: 35px;
+  width: 100%;
+}
+#menu-list>ul{
+  position: absolute;
+  background-color:#ffffff;
+  
+  padding: 1em;
+  line-height: 2; 
+  font-size: 1.2rem;
+  border: 1px solid rgba(190, 184, 184, 0.377);
+  top: 60px;
+  right:35px;
+  transition: .01s;
+  list-style: none;
+  cursor: pointer;
+  transition: .01s;
+  border-radius: 10px;
+  box-shadow:#555;
+  transition: 0.2s;
+}
+#menu-list>ul>li{
+  width: 124%;
+  margin-left: -20px;
+  padding-left: 1em ;
+   
+}
+
+#menu-list>ul>li:hover{
+  background-color: rgba(240, 234, 234, 0.671);
+}
+
+.hide{
+  display: none;
+}
+.grp-menu{
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.input-box{
+  outline: none;
+}
+
+
+#filter-msg_para{
+  color:#009688 ;
+  width:100%;
+  padding: 1em;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  
+  border-bottom:1px solid rgba(190, 184, 184, 0.377); 
+}
+.filter-img{
+  width: 50px;
+  margin-left: 20px;
+  padding: 1em 0;
+}
+.flex{
+  display: flex;
+  
+}
+.grp-details{
+  margin-left: 30px;
+  margin-right: 184px;
+  padding: 1em 0;
+}
+.msg-count{
+   background-color: #00a884;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   border-radius: 50%;
+   width: 15%;
+   margin-left: 50px;
+   
+}
+#msg-drp{
+  margin-left: 10px;
+  
+  
+}
+.person-lastTime{
+  padding: 1em 0;
+}
+
+/* style for profile */
+
+#profile-container{
+  position: absolute;
+  top: 0;
+  background-color: #f0f2f5;
+  display: none;
+  transition: 5s;
+}
+.prof{
+  background-color: #008069;
+  width: 365%;
+  /* padding-top: 3em;  */
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.prof-icon{
+  padding: 1em;
+}
+.pro{
+  padding: 1em 1em;
+}
+.profile-picture{
+  background-color: #f0f2f5;
+  height: 40vh;
+  width: 365%;
+}
+.profile-picture_img{
+  margin: 2em 6em;
+  border-radius: 50%;
+  width: 15%;
+  transition: .02s;
+}
+.profile-name{
+  background-color: #ffffff;
+  width: 100%;
+}
+.name{
+  color: #008069;
+  padding: 1em 2em;
+  font-size: 1.1rem;
+
+}
+.profile-user_name{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  font-size: 1.2rem;
+  
+}
+.warn{
+  padding: 1em 2em 1em ;
+  color: rgb(165, 162, 162);
+}
+.about{
+  background-color:#ffffff ;
+}
+.about-para{
+  padding: 1em 2em;
+  color: #008069;
+  font-size: 1.1rem;
+}
+.about-info{
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  font-size: 1.2rem;
+}
+
 
  /* Here the styling for Contact list */
 
@@ -171,6 +337,15 @@ width: 15vw;
 ::-webkit-scrollbar{
   width: 0px;
 }
+
+
+
+
+
+
+
+
+
 
 /* Here the Styling of Default-Right-container */
 
