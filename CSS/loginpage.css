@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -12,13 +13,103 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #ccc;
+  background: rgba(244, 247, 243, 0.826);
 }
 
 .background-green {
+  z-index: -12;
   position: absolute;
   top: 0;
   width: 100%;
-  height: 20%;
+  height: 150px;
   background-color: #009688;
+}
+
+.main-container {
+  /* margin: 1px 1px 1px 800px; */
+  height: 70vh;
+  width: 23vw;
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.container-box {
+  width: 90%;
+}
+
+.whatsapp-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.whatsapp-image {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.input-boxes {
+  padding: 0.5rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input-boxes > input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: rgb(244, 244, 244);
+  border-radius: 0.2rem;
+}
+.input-boxes > button {
+  padding: 0.4rem;
+  margin: 0.3rem 0;
+  border-radius: 0.2rem;
+  background-color:#25D366;
+  outline: none;
+  border: none;
+  color: white;
+}
+/* horizontal line */
+.or-container{
+  position: relative;
+  text-align:center;
+}
+.hr{
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.or-text{
+  position: relative;
+  background-color: white;
+  padding: 0 0.3rem;
+  z-index: 9999;
+}
+.forgot-password{
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  }
+
+.signup{
+  position: relative;
+  top: 6rem;
+  border-radius: 0.2rem;
+  padding: 0.8rem 0;
+  background-color: #009688;
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+}
+.signup  a {
+  color: #44ffe0;
 }
