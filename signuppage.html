@@ -4,17 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/signuppage.css">
+    <title>Sign up | Whatspp</title>
 </head>
 <body>
-    <div class="signup-container">
-        <form action="">
-            <input type="text" name="username" id="username" placeholder="Enter username">
-            <input type="text" name="mobile" id="mobile" placeholder="Enter your Mobile">
-            <input type="password" name="password" id="password">
-            <button type="submit" id="submit">Sign up</button>
-        </form>
-    </div>
+      <main class="main-container">
+        <div class="right-container">
+            <div class="svg-container">
+              <img src="./images/chatting.svg" alt="chatting" class="chatting-svg">
+            </div>
+          </div>
+        <div class="left-container">
+          <div class="alert">
+            <span id="mobile-alert"> 
+            </span>
+          </div>
+          <div class="login-box">
+            <div class="whatsapp-image-container">
+              <img class="whatsapp-image" src="./images/whatsapptext.png" alt="whatsapplogo">
+            </div>
+            <form action="" class="input-boxes">
+                <input type="text" name="username" id="username" placeholder="Enter username">
+                <input type="text" name="mobile" id="mobile" placeholder="Enter your Mobile">
+                <input type="password" placeholder="Create a Password" id="password">
+                <input type="password" placeholder="Confirm your Password" id="password">
+                <button type="submit" id="submit">Sign up</button>
+            </form>
+    
+            <div class="forgot-password">
+              <p class="forgot-text">
+                By signing up, you agree to our Terms, Privacy Policy and Cookies Policy.
+              </p>
+            </div>
+            <div class="signup">
+              <p class="signup-text">
+                Have an account? <a href="#" id="login-btn">Log in </a>
+              </p>
+            </div>
+    
+          </div>
+        </div>
+       
+    
+      </main>
+
     <script src="./script/signup.js"></script>
 </body>
 </html>

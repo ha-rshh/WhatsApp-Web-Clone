@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 2px solid blue !important;
+}
+body{
+  background-color: #FAFAFA;
+
+}
+
+.main-container {
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+}
+.left-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.alert{
+  position: absolute;
+  top: 5rem;
+  padding: 0.3rem 2rem;
+  border-radius: 0.2rem;
+  color: white;
+
+
+}
+.login-box {
+  background-color: white;
+  border: 1px solid lightgray ;
+  border-radius: 5px;
+  width: 60%;
+  min-width: 300px;
+  max-width: 350px;
+}
+
+.whatsapp-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.whatsapp-image {
+  margin: 0 auto;
+  width: 250px;
+  filter: drop-shadow(0 0 10px rgba(51, 51, 51, 0.26));
+}
+
+.input-boxes {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input-boxes > input {
+  font-size: 1rem;
+  padding: 0.5rem;
+  outline: none;
+  border: none;
+  background-color: rgb(244, 244, 244);
+  border-radius: 0.2rem;
+}
+.input-boxes > button {
+  padding: 0.4rem;
+  margin: 0.3rem 0;
+  border-radius: 0.2rem;
+  background-color:#25D366;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.input-boxes > button:hover {
+  transition: 0.2s;
+  background-color:#12ab4a;
+}
+/* horizontal line */
+.or-container{
+  position: relative;
+  text-align:center;
+}
+.hr{
+  position: absolute;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.or-text{
+  position: relative;
+  background-color: white;
+  padding: 0 0.3rem;
+  z-index: 9999;
+}
+.forgot-password{
+  margin: 1rem 0;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  }
+
+.signup{
+  background-color: white;
+  position: relative;
+  top: 2.5rem;
+  border: 1px solid lightgray;
+  padding: 0.8rem 0;
+  margin: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+.signup  a {
+  color: #34B7F1;
+}
+.signup  a:hover {
+  color: #107dac;
+}
+
+.right-container{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chatting-svg{
+  margin-top: 2rem;
+  width: 500px;
+}
+@media only screen and (max-width: 1000px) {
+  .right-container{
+    display: none;
+  }
+  .left-container{
+    width: 100%;
+  }
+}

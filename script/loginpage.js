@@ -34,8 +34,8 @@ function checkUser(e){
         if(mobileNum.value === users[i].mobile && passwordEl.value === users[i].password){
             window.location.href = "index.html";
             // console.log('user Exist')
-            const loggedInUser = users[i];
-            localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
+            // const loggedInUser = users[i];
+            // localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
         }
         else {
             alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
