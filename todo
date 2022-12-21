@@ -1,0 +1,15 @@
+- Add Form Validation in LogIn and SIgnUp Forms
+
+- When user signs up, create and object and store in local storage as an array of objects
+
+- When user logs in  then we’ll check on the array of object in local storage and validate it.
+
+- If we find a user in that array of objects then we will create a currentUser.
+
+- When the page initially loads, then we will check if there exists a currentUser
+
+- if not then we will redirect to the login page
+otherwise we will use the currentUser
+
+- otherwise we will use the currentUser
+

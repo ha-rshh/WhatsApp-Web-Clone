@@ -73,6 +73,7 @@ body {
   background-color:#25D366;
   outline: none;
   border: none;
+  cursor: pointer;
   color: white;
 }
 /* horizontal line */
