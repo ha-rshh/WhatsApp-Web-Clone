@@ -7,27 +7,49 @@
 const mobileNum = document.getElementById('mobile');
 const passwordEl = document.getElementById('password');
 const submitBtn = document.getElementById('submit');
+const mobileNumAlert = document.querySelector('#mobile-alert');
+const alertDiv = document.querySelector(".alert")
+const signupBtn = document.querySelector('#signup-btn');
 
 let users = JSON.parse(localStorage.getItem('users'));
 console.log(users)
 
 function checkUser(e){
     e.preventDefault();
-    if (mobileNum.value == '' || passwordEl.value == '') console.log('Fill all fields')
+    if (mobileNum.value == '') {
+        alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
+        mobileNumAlert.innerText = "Please enter valid Mobile number"
+        setTimeout(() => {
+            alertDiv.style.cssText = "transition:1s; display: none";
+        }, 2000);
+    } else if (passwordEl.value == '') {
+        alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
+        mobileNumAlert.innerText = "Please enter valid Password"
+        setTimeout(() => {
+            alertDiv.style.cssText = "transition:1s; display: none";
+        }, 2000);
+    }
     
     for(let i = 0 ; i < users.length; i++){
-        
         if(mobileNum.value === users[i].mobile && passwordEl.value === users[i].password){
-            console.log('user Exist')
+            window.location.href = "index.html";
+            // console.log('user Exist')
             const loggedInUser = users[i];
             localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
-            window.location.href = "http://www.w3schools.com";
-        } 
+        }
         else {
-            console.log("user does not exist")
+            alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
+            mobileNumAlert.innerText = "No user found"
+            setTimeout(() => {
+                alertDiv.style.cssText = "transition:1s; display: none";
+            }, 2000);
         }
     }
 }
 
 submitBtn.addEventListener('click', checkUser);
+
+signupBtn.addEventListener('click', () => {
+    window.location.href = "signuppage.html";
+} )
 
