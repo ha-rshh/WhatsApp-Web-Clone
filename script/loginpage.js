@@ -50,6 +50,6 @@ function checkUser(e){
 submitBtn.addEventListener('click', checkUser);
 
 signupBtn.addEventListener('click', () => {
-    window.location.href = "signuppage.html";
+    window.location.href = "./signuppage.html";
 } )
 

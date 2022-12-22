@@ -37,10 +37,6 @@ if(logout.innerText == "Log out"){
  
   window.location.href = "./loginpage.html";
 }
-  
-  
-
-  
 })
 
 
