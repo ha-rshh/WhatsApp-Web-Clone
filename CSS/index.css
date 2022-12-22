@@ -242,11 +242,13 @@ body {
   top: 0;
   background-color: #f0f2f5;
   display: none;
+  border-right: 5px solid gray;
   transition: 5s;
 }
 .prof{
   background-color: #008069;
-  width: 365%;
+  min-width: 100%;
+  max-height: 100%;
   /* padding-top: 3em;  */
   color: white;
   font-size: 1.5rem;
@@ -256,17 +258,17 @@ body {
   padding: 1em;
 }
 .pro{
-  padding: 1em 1em;
+  padding: 1rem 1rem ;
 }
 .profile-picture{
   background-color: #f0f2f5;
   height: 40vh;
-  width: 365%;
+  width: 100%;
 }
 .profile-picture_img{
   margin: 2em 6em;
   border-radius: 50%;
-  width: 15%;
+  width: 50%;
   transition: .02s;
 }
 .profile-name{
@@ -275,33 +277,33 @@ body {
 }
 .name{
   color: #008069;
-  padding: 1em 2em;
+  padding: 0.8em 2em;
   font-size: 1.1rem;
 
 }
 .profile-user_name{
   display: flex;
   justify-content: space-between;
-  padding: 1em 1.5em;
+  padding: 0.8em 1.5em;
   font-size: 1.2rem;
-  
 }
 .warn{
-  padding: 1em 2em 1em ;
+  background-color: #f0f2f5;
+  padding: 0.8em 2em 1em ;
   color: rgb(165, 162, 162);
 }
 .about{
   background-color:#ffffff ;
 }
 .about-para{
-  padding: 1em 2em;
+  padding: 0.8em 2em;
   color: #008069;
   font-size: 1.1rem;
 }
 .about-info{
   display: flex;
   justify-content: space-between;
-  padding: 1em 1.5em;
+  padding: 0.6em 1.5em;
   font-size: 1.2rem;
 }
 
