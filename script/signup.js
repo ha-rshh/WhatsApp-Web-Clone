@@ -31,5 +31,5 @@ function createUser(e){
 submitBtn.addEventListener('click', createUser)
 
 loginBtn.addEventListener('click', () => {
-    window.location.href = "loginpage.html";
+    window.location.href = "./loginpage.html";
 } )
