@@ -30,6 +30,20 @@ grpMenu.addEventListener("click",()=>{
   menuList.classList.toggle('hide')
   
 })
+let logout ="";
+menuList.addEventListener("click", (e)=>{
+logout = e.path[2].firstChild.lastElementChild
+if(logout.innerText == "Log out"){
+ 
+  window.location.href = "./loginpage.html";
+}
+  
+  
+
+  
+})
+
+
 
 filter.addEventListener("click", ()=>{
   
@@ -70,7 +84,7 @@ profilePic.addEventListener("click", ()=>{
 profIcon.addEventListener("click", ()=>{
   profileContainer.style.display = "none"
 })
-console.log(profIcon)
+
 
 // document.addEventListener("click", (e)=>{
 //   if(e.target !== svg && e.target.id !== "filter-msg"){
@@ -81,7 +95,7 @@ console.log(profIcon)
 // })
   
 statusIcon.addEventListener('click',()=>{
-  window.location.href = "http://127.0.0.1:5501/statuspage.html";
+  window.location.href = "statuspage.html";
 });
 
 
