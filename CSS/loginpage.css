@@ -6,11 +6,10 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  border-radius: 2px solid blue !important;
+  /* border-radius: 2px solid blue !important; */
 }
 body{
   background-color: #FAFAFA;
-
 }
 
 .main-container {
@@ -133,7 +132,12 @@ body{
 }
 .chatting-svg{
   margin-top: 2rem;
+  transition: 1s;
   width: 500px;
+}
+.chatting-svg:hover{
+  transition: 1s;
+  scale: 1.1;
 }
 @media only screen and (max-width: 1000px) {
   .right-container{
