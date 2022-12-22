@@ -27,12 +27,10 @@ body{
 }
 .alert{
   position: absolute;
-  top: 5rem;
+  top: 4.5rem;
   padding: 0.3rem 2rem;
   border-radius: 0.2rem;
   color: white;
-
-
 }
 .login-box {
   background-color: white;
@@ -132,13 +130,22 @@ body{
 }
 .chatting-svg{
   margin-top: 2rem;
-  transition: 1s;
   width: 500px;
+  animation: float 5s ease-in-out infinite;
 }
-.chatting-svg:hover{
-  transition: 1s;
-  scale: 1.1;
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-30px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
+
 @media only screen and (max-width: 1000px) {
   .right-container{
     display: none;
