@@ -12,10 +12,10 @@ const alertDiv = document.querySelector(".alert")
 const signupBtn = document.querySelector('#signup-btn');
 
 let users = JSON.parse(localStorage.getItem('users'));
-console.log(users)
 
 function checkUser(e){
     e.preventDefault();
+  
     if (mobileNum.value == '') {
         alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
         mobileNumAlert.innerText = "Please enter valid Mobile number"
@@ -28,18 +28,23 @@ function checkUser(e){
         setTimeout(() => {
             alertDiv.style.cssText = "transition:1s; display: none";
         }, 2000);
+    } else if(!users) {
+        alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
+                mobileNumAlert.innerText = "No user found"
+                setTimeout(() => {
+                    alertDiv.style.cssText = "transition:1s; display: none";
+                }, 2000);
     }
-    
     for(let i = 0 ; i < users.length; i++){
         if(mobileNum.value === users[i].mobile && passwordEl.value === users[i].password){
             window.location.href = "index.html";
             // console.log('user Exist')
-            // const loggedInUser = users[i];
-            // localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
+            const loggedInUser = users[i];
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser))
         }
         else {
             alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
-            mobileNumAlert.innerText = "No user found"
+            mobileNumAlert.innerText = "Your username and/ or password do not match"
             setTimeout(() => {
                 alertDiv.style.cssText = "transition:1s; display: none";
             }, 2000);
