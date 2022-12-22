@@ -68,7 +68,6 @@ function createUser(e) {
         }
         if (!userFound){
             users.push(user)
-            
         } 
         else {
             alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E";
