@@ -35,6 +35,7 @@ grpMenu.addEventListener("click",()=>{
   menuList.classList.toggle('hide')
   
 })
+
 let logout ="";
 menuList.addEventListener("click", (e)=>{
 logout = e.path[2].firstChild.lastElementChild
@@ -49,8 +50,8 @@ if(logout.innerText == "Log out"){
 filter.addEventListener("click", ()=>{
   
    filterMsg.innerHTML = `<div>
-   <p id="filter-msg_para">FILTERED BY UNREAD</p>
- </div>
+                          <p id="filter-msg_para">FILTERED BY UNREAD</p>
+                          </div>
 
  <div class="flex"> 
    <div class="filter1">
@@ -106,7 +107,7 @@ statusIcon.addEventListener('click',()=>{
 selectPerson.addEventListener("click",(e)=> {
   rightMost.style.display = "none";
   chatPerson.style.display = "block";
-  chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;
+  /*chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;*/
   chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
   
 })
