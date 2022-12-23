@@ -437,6 +437,7 @@ width: 15vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: rgba(128, 128, 128, 0.945);
 
 }
 
