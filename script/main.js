@@ -10,6 +10,11 @@ const profilePic = document.querySelector(".profile-img");
 const profileContainer = document.getElementById("profile-container");
 const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector('.status');
+const selectPerson = document.querySelector('.contact-list')
+const rightMost = document.querySelector(".right-most-container");
+const chatPerson = document.querySelector(".right-chatbox") 
+const chatpersonImg = document.querySelector("person-img-details")
+const chatPersonName = document.querySelector("person-name")
 
 
 
@@ -71,6 +76,9 @@ filter.addEventListener("click", ()=>{
    filterMsg.classList.toggle("hide");
    contactList.style.display = "none"
   
+   function chatboxHeader () {
+    
+   }
    
 })
 
@@ -95,5 +103,11 @@ statusIcon.addEventListener('click',()=>{
 });
 
 
-
+selectPerson.addEventListener("click",(e)=> {
+  rightMost.style.display = "none";
+  chatPerson.style.display = "block";
+  chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;
+  chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
+  
+})
 
