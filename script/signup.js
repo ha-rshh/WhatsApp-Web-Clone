@@ -77,9 +77,19 @@ function createUser(e) {
             }, 2000);
         }
         localStorage.setItem("users", JSON.stringify(users))
+        reset();
     }
-    submitBtn.reset();
 }
+
+function reset(){
+    userNameEl.value = ""
+    mobileNum.value = ""
+    passwordEl.value = ""
+    ConfirmPasswordEl.value = ""
+}
+
+
+
 submitBtn.addEventListener('click', createUser)
 loginBtn.addEventListener('click', () => {
     window.location.href = "./loginpage.html";
