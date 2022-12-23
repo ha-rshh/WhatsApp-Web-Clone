@@ -29,7 +29,7 @@ function checkUser(e){
             alertDiv.style.cssText = "transition:1s; display: none";
         }, 2000);
     } else if(!users) {
-        alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E "
+        alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E"
                 mobileNumAlert.innerText = "No user found"
                 setTimeout(() => {
                     alertDiv.style.cssText = "transition:1s; display: none";
@@ -53,7 +53,6 @@ function checkUser(e){
 }
 
 submitBtn.addEventListener('click', checkUser);
-
 signupBtn.addEventListener('click', () => {
     window.location.href = "./signuppage.html";
 } )
