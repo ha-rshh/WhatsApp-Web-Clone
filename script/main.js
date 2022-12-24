@@ -37,10 +37,14 @@ grpMenu.addEventListener("click",()=>{
 
 let logout ="";
 menuList.addEventListener("click", (e)=>{
-logout = e.path[2].firstChild.lastElementChild
-if(logout.innerText == "Log out"){
+logout = e.path[0].innerHTML;
+
+if(logout == "Log out"){
+// logout = e.path[2].firstChild.lastElementChild
+// if(logout.innerText == "Log out")
   window.location.href = "./loginpage.html";
 }
+// console.log(logout)
 })
 
 
