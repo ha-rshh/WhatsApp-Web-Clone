@@ -23,8 +23,8 @@ inputBox.addEventListener("click", ()=>{
     searchIcon.style.color = "#009688"
     
 });
+
 grpMenu.addEventListener("click",()=>{
-  
     menuList.innerHTML =`<ul>
     <li>New group</li>
     <li>New community</li>
@@ -33,7 +33,6 @@ grpMenu.addEventListener("click",()=>{
     <li>Log out</li>
   </ul>`
   menuList.classList.toggle('hide')
-  
 })
 
 let logout ="";
@@ -41,16 +40,16 @@ menuList.addEventListener("click", (e)=>{
 logout = e.path[0].innerHTML;
 
 if(logout == "Log out"){
- 
+// logout = e.path[2].firstChild.lastElementChild
+// if(logout.innerText == "Log out")
   window.location.href = "./loginpage.html";
 }
-console.log(logout)
+// console.log(logout)
 })
 
 
 
 filter.addEventListener("click", ()=>{
-  
    filterMsg.innerHTML = `<div>
                           <p id="filter-msg_para">FILTERED BY UNREAD</p>
                           </div>

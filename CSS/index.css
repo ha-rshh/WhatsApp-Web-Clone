@@ -172,9 +172,9 @@ body {
   transition: 0.2s;
 }
 #menu-list>ul>li{
-  width: 150%;
-  padding-left: 1em ;
-   
+  /* width: 150%; */
+  /* padding-left: 1em ; */
+   padding: 0rem 0.5rem ;
 }
 
 #menu-list>ul>li:hover{
@@ -182,7 +182,7 @@ body {
 }
 
 .hide{
-  display: none;
+  visibility: hidden;
 }
 .grp-menu{
   border: none;
