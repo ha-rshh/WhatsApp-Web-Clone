@@ -10,6 +10,11 @@ const profilePic = document.querySelector(".profile-img");
 const profileContainer = document.getElementById("profile-container");
 const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector('.status');
+const selectPerson = document.querySelector('.contact-list')
+const rightMost = document.querySelector(".right-most-container");
+const chatPerson = document.querySelector(".right-chatbox") 
+const chatpersonImg = document.querySelector("person-img-details")
+const chatPersonName = document.querySelector("person-name")
 
 
 
@@ -18,8 +23,8 @@ inputBox.addEventListener("click", ()=>{
     searchIcon.style.color = "#009688"
     
 });
+
 grpMenu.addEventListener("click",()=>{
-  
     menuList.innerHTML =`<ul>
     <li>New group</li>
     <li>New community</li>
@@ -28,13 +33,12 @@ grpMenu.addEventListener("click",()=>{
     <li>Log out</li>
   </ul>`
   menuList.classList.toggle('hide')
-  
 })
+
 let logout ="";
 menuList.addEventListener("click", (e)=>{
 logout = e.path[2].firstChild.lastElementChild
 if(logout.innerText == "Log out"){
- 
   window.location.href = "./loginpage.html";
 }
 })
@@ -42,10 +46,9 @@ if(logout.innerText == "Log out"){
 
 
 filter.addEventListener("click", ()=>{
-  
    filterMsg.innerHTML = `<div>
-   <p id="filter-msg_para">FILTERED BY UNREAD</p>
- </div>
+                          <p id="filter-msg_para">FILTERED BY UNREAD</p>
+                          </div>
 
  <div class="flex"> 
    <div class="filter1">
@@ -71,6 +74,9 @@ filter.addEventListener("click", ()=>{
    filterMsg.classList.toggle("hide");
    contactList.style.display = "none"
   
+   function chatboxHeader () {
+    
+   }
    
 })
 
@@ -95,5 +101,11 @@ statusIcon.addEventListener('click',()=>{
 });
 
 
-
+selectPerson.addEventListener("click",(e)=> {
+  rightMost.style.display = "none";
+  chatPerson.style.display = "block";
+  /*chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;*/
+  chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
+  
+})
 
