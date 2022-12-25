@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", arial, "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
+
 }
 
 body {
@@ -25,9 +25,9 @@ body {
 
 .main-container {
   position: relative;
-  width: 98%;
+  width: 100%;
   max-width: 100%;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   background: #555;
   display: flex;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -72,12 +72,13 @@ body {
   background-color: #f0f2f5;
   position: relative;
   cursor: pointer;
+  border-right: thin solid #a5b2c498;
 }
 
 .profile-pic {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
-  height: 50px;
+  height: 40px;
   margin: 1em 1em;
   background-color: #f0f2f5;
 }
@@ -97,14 +98,14 @@ body {
 }
 
 .search {
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
   padding-bottom: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.301);
+  border: thin solid rgba(128, 128, 128, 0.101);
 }
 
 .search-box {
@@ -112,39 +113,36 @@ body {
   border: none;
   width: 80%;
   margin-top: .6em;
-
 }
 
 .search-icon {
-  width: 10%;
+  width: 5%;
   position: absolute;
   top: .5em;
   left: 1.5em;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #54656f;
 }
 
 .input-box {
-  margin-left: 0.3rem;
-  width: 100%;
+  width: 25vw;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
-  color: #f0f2f5;
+  color: #54656f;
   background-color: #f0f2f5;
   box-sizing: border-box;
   padding: .7em;
-  font-size: 1rem;
-  color: black;
+  font-size: 13px;
 }
 
 .filter {
-  font-size: 2rem;
   margin-top: .5em;
-  width: 10%;
+  color: #54656f;
+  padding: .2rem;
   text-align: center;
   /* background-color: #00a884; */
   border-radius: 50%;
-  color:black;
   cursor: pointer;
 }
 
@@ -322,17 +320,22 @@ body {
  /* Here the styling for Contact list */
 
  .contact-list{
-  height: 75vh;
+  height: 81%;
   overflow-y:scroll;
   
 }
 .person{
   width: 100%;  
-  border: 1px solid rgba(128, 128, 128, 0.301);
+  border: thin solid rgba(128, 128, 128, 0.101);
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   padding: 10px 20px;
+  background-color: #fff;
+}
+.person:hover{
+  cursor: pointer;
+  background-color: #f5f6f6;
 }
 .person-img-details{
   width: 10vw;
@@ -340,11 +343,29 @@ body {
   justify-content: space-between;
   
 }
+
+.person-name-details{
+  font-size: 17px;
+  font-weight: 400;
+  color: #111b21;
+}
+.person-msg{
+  font-size: 13px;
+  color : #667781;
+  
+}
+
 .person-name{
   width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 .person-lastTime{
-width: 15vw;
+  width: 15vw;
+  font-size: 13px;
+  color : #667781;
+
 }
 
 ::-webkit-scrollbar{
