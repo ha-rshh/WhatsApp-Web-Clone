@@ -113,3 +113,28 @@ selectPerson.addEventListener("click",(e)=> {
   
 })
 
+
+const input = document.getElementsByClassName('input-box');
+const ul = document.getElementsByTagName('ul');
+const li = document.getElementsByTagName('li');
+
+
+function myFunc(event){
+  const filters = input[0].value.toUpperCase();
+
+if(event.key === "Enter" ){
+  for(let i = 0; i < li.length;i++){
+    let a = li[i].getElementsByTagName('h3');
+     let txtValue = a[0].textContent || a[0].innerText;
+ 
+     if(txtValue.toUpperCase().indexOf(filters) > -1){
+       li[i].style.display = "";
+     }
+     else{
+       li[i].style.display = 'none';
+     }
+   }
+}
+
+}
+input[0].addEventListener("keypress" , myFunc);
