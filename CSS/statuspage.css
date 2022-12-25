@@ -25,9 +25,9 @@ body {
 
 .main-container {
   position: relative;
-  width: 98%;
+  width: 100%;
   max-width: 100%;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   background: #555;
   display: flex;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -59,7 +59,7 @@ body {
  /* Here the styling for Contact list */
 
  .contact-list{
-  height: 75vh;
+  height: 80vh;
   overflow-y:scroll;
   
 }
