@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", arial, "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
+
 }
 
 body {
@@ -25,9 +25,9 @@ body {
 
 .main-container {
   position: relative;
-  width: 98%;
+  width: 100%;
   max-width: 100%;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   background: #555;
   display: flex;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -72,12 +72,13 @@ body {
   background-color: #f0f2f5;
   position: relative;
   cursor: pointer;
+  border-right: thin solid #a5b2c498;
 }
 
 .profile-pic {
-  width: 50px;
+  width: 40px;
   border-radius: 50%;
-  height: 50px;
+  height: 40px;
   margin: 1em 1em;
   background-color: #f0f2f5;
 }
@@ -97,14 +98,14 @@ body {
 }
 
 .search {
-  height: 10vh;
+  height: 8vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
   padding-bottom: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.301);
+  border: thin solid rgba(128, 128, 128, 0.101);
 }
 
 .search-box {
@@ -112,39 +113,36 @@ body {
   border: none;
   width: 80%;
   margin-top: .6em;
-
 }
 
 .search-icon {
-  width: 10%;
+  width: 5%;
   position: absolute;
   top: .5em;
   left: 1.5em;
-  font-size: 1.2rem;
+  font-size: 1rem;
+  color: #54656f;
 }
 
 .input-box {
-  margin-left: 0.3rem;
-  width: 100%;
+  width: 25vw;
   text-align: center;
-  border-radius: 25px;
+  border-radius: 10px;
   border: none;
-  color: #f0f2f5;
+  color: #54656f;
   background-color: #f0f2f5;
   box-sizing: border-box;
   padding: .7em;
-  font-size: 1rem;
-  color: black;
+  font-size: 13px;
 }
 
 .filter {
-  font-size: 2rem;
   margin-top: .5em;
-  width: 10%;
+  color: #54656f;
+  padding: .2rem;
   text-align: center;
   /* background-color: #00a884; */
   border-radius: 50%;
-  color:black;
   cursor: pointer;
 }
 
@@ -322,29 +320,56 @@ body {
  /* Here the styling for Contact list */
 
  .contact-list{
-  height: 75vh;
+  height: 81%;
   overflow-y:scroll;
-  
 }
 .person{
+  height: 12vh  ;
   width: 100%;  
-  border: 1px solid rgba(128, 128, 128, 0.301);
   display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
-  padding: 10px 20px;
+  background-color: #fff;
+}
+.person:hover{
+  cursor: pointer;
+  background-color: #f5f6f6;
 }
 .person-img-details{
   width: 10vw;
   display: flex;
   justify-content: space-between;
+  margin-left: 10px;
+  box-sizing: border-box;
+  padding: 10px 0px;
+}
+
+.person-name-details{
+  font-size: 18px;
+  font-weight: 400;
+  color: #111b21;
   
 }
+.person-msg{
+  font-size: 13px;
+  color : #667781;
+  
+}
+
 .person-name{
+  height: 12vh;
   width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  box-sizing: border-box;
+  padding: 10px 0px;
+  border-bottom: thin solid rgba(128, 128, 128, 0.101);
 }
 .person-lastTime{
-width: 15vw;
+  width: 15vw;
+  font-size: 12px;
+  color : #667781;
+  border-bottom: thin solid rgba(128, 128, 128, 0.101);
+
 }
 
 ::-webkit-scrollbar{
@@ -365,7 +390,7 @@ width: 15vw;
 .right-most-container{
   height: 100%;
   width: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,Helvetica;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", arial, "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
   background-color:rgb(240,242,245);
   display: flex;
   flex-direction: column;
@@ -374,12 +399,13 @@ width: 15vw;
   gap: 1rem;
   padding-top:100px;
   box-sizing: border-box;
+  border-bottom: 5px solid rgb(37,211,102);
 
 }
 
 .default-content{
   width: 32vw;
-  color: gray;
+  color: rgb(70,82,93);
   font-weight: lighter;
   font-size: .9rem;
   text-align:center;
@@ -401,28 +427,34 @@ width: 15vw;
   background: url(https://camo.githubusercontent.com/854a93c27d64274c4f8f5a0b6ec36ee1d053cfcd934eac6c63bed9eaef9764bd/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67);
 }
 .chatbox-head{
+  max-height: 10%;
   width: 100%;
-  height: 10%;
   background-color:rgb(240,242,245);
-  border-left: 0.5px solid rgba(128, 128, 128, 0.5);
-  padding: 35px;
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
+  align-items: center;  
 }
 
 .contact{
-  width: 30vw;
+  height: 10vh;
+  width: 40vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  padding: 10px 50px;
 }
+
+.contact img{
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 50%;
+}
+
 
 .option{
   width: 10vw;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  color:rgb(84,101,111);
 }
 
 .chat{
@@ -431,23 +463,27 @@ width: 15vw;
 }
 
 .chatbox-bottom{
-  height: 9.5%;
+  height: 10%;
   width: 100%;
   background-color: rgb(240,242,245);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  color: rgba(128, 128, 128, 0.945);
+  color:rgb(84,101,111);
 
 }
 
 .chatbox-bottom svg{
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
+}
+
+.chatbox-bottom svg:hover{
+  cursor: pointer;
 }
 
 #chatbox-input{
-  width: 55vw;
+  width: 60vw;
   border-radius: 5px;
   padding: 10px 20px;
   outline: none;

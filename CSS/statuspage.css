@@ -25,9 +25,9 @@ body {
 
 .main-container {
   position: relative;
-  width: 98%;
+  width: 100%;
   max-width: 100%;
-  height: calc(100vh - 2rem);
+  height: 100vh;
   background: #555;
   display: flex;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -44,40 +44,52 @@ body {
 /* style for icon container */
 
 .profile-pic {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
 .profile-img {
   width: 100%;
-  border-radius: 50%;
   
 }
 
 
  /* Here the styling for Contact list */
 
+.user-status{
+  height: 20vh;
+  width: 100%;
+  background-color: rgb(30,38,44);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.status-user {
+  width: 20vw;
+  padding-bottom: 20px;
+  border-bottom: thin solid gray; 
+}
+
  .contact-list{
-  height: 75vh;
+  height: 80vh;
   overflow-y:scroll;
   
 }
-.person{
+.person-chatbox{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  box-sizing: border-box;
-  padding: 10px 20px;
   color: white;
+  padding: 0px 10px;
   background-color: rgb(30,38,44);
-  border: none;
+  
 }
 .person-img-details{
   width: 10vw;
   display: flex;
   justify-content: space-between;
-  
 }
 .person-img-details img{
     outline-offset: 5px;
@@ -85,6 +97,7 @@ body {
 }
 .person-name{
   width: 40vw;
+  border: none;
 }
 .person-name-details{
   font-size:16px;
@@ -143,18 +156,3 @@ body {
     background-color: rgb(11,20,26);
 }
 
-.user-status{
-    height: 20vh;
-    width: 100%;
-    background-color: rgb(30,38,44);
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-
-.status-user {
-  width: 20vw;
-  padding-bottom: 20px;
-  border-bottom: thin solid gray; 
-}
