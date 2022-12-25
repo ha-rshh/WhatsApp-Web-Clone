@@ -161,7 +161,7 @@ body {
   border: 1px solid rgba(190, 184, 184, 0.377);
   top: 60px;
   right:35px;
-  transition: .01s;
+  transition: 0.1ms;
   list-style: none;
   cursor: pointer;
   transition: .01s;

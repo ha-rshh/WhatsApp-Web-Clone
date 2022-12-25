@@ -81,14 +81,15 @@ profIcon.addEventListener("click", ()=>{
   profileContainer.style.display = "none"
 })
 
-
-// document.addEventListener("click", (e)=>{
-//   if(e.target !== svg && e.target.id !== "filter-msg"){
-//     menuList.classList.remove("menu-list")
+document.addEventListener("click", (event)=>{
+  
+  if(!grpMenu.contains(event.target) && !filter.contains(event.target)){
+    menuList.classList = "hide"
+    filterMsg.classList = "hide"
     
-//   }
-//   console.log(e)
-// })
+  } 
+  
+})
   
 statusIcon.addEventListener('click',()=>{
   window.location.href = "statuspage.html";
