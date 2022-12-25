@@ -49,13 +49,12 @@
           </svg>
 
           <!-- menu bar -->
-          <button class="grp-menu">
-            <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px"
-              y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
-              <path fill="currentColor"
-                d="M12,7c1.104,0,2-0.896,2-2c0-1.105-0.895-2-2-2c-1.104,0-2,0.894-2,2 C10,6.105,10.895,7,12,7z M12,9c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,9.895,13.104,9,12,9z M12,15 c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,15.894,13.104,15,12,15z">
-              </path>
-            </svg></button>
+          <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" version="1.1" x="0px"
+            y="0px" enable-background="new 0 0 24 24" xml:space="preserve" class="grp-menu">
+            <path fill="currentColor"
+              d="M12,7c1.104,0,2-0.896,2-2c0-1.105-0.895-2-2-2c-1.104,0-2,0.894-2,2 C10,6.105,10.895,7,12,7z M12,9c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,9.895,13.104,9,12,9z M12,15 c-1.104,0-2,0.894-2,2c0,1.104,0.895,2,2,2c1.104,0,2-0.896,2-2C13.999,15.894,13.104,15,12,15z">
+            </path>
+          </svg>
 
 
           <!-- menu list -->
@@ -67,25 +66,35 @@
       <!-- search Box -->
       <div class="search">
 
-        <div class="search-box">
-          <div><input class="input-box" type="text" placeholder="Search or start new chat"></div>
-          <div class="search-icon"><svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z"></path></svg></div>
-        </div>
-        <div class="filter">
-          <svg viewBox="0 0 24 24" fill="54656f" height="20" width="20" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="currentColor" d="M10,18.1h4v-2h-4V18.1z M3,6.1v2h18v-2H3z M6,13.1h12v-2H6V13.1z"></path></svg>
+        <div class="search-container">
+          <div class="search-box">
+            <div><input class="input-box" type="text" placeholder="Search or start new chat"></div>
+            <div class="search-icon"><svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+                class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+                <path fill="currentColor"
+                  d="M15.009,13.805h-0.636l-0.22-0.219c0.781-0.911,1.256-2.092,1.256-3.386 c0-2.876-2.332-5.207-5.207-5.207c-2.876,0-5.208,2.331-5.208,5.207s2.331,5.208,5.208,5.208c1.293,0,2.474-0.474,3.385-1.255 l0.221,0.22v0.635l4.004,3.999l1.194-1.195L15.009,13.805z M10.201,13.805c-1.991,0-3.605-1.614-3.605-3.605 s1.614-3.605,3.605-3.605s3.605,1.614,3.605,3.605S12.192,13.805,10.201,13.805z">
+                </path>
+              </svg></div>
+          </div>
+          <div class="filter">
+            <svg viewBox="0 0 24 24" fill="54656f" height="20" width="20" preserveAspectRatio="xMidYMid meet" class=""
+              version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+              <path fill="currentColor" d="M10,18.1h4v-2h-4V18.1z M3,6.1v2h18v-2H3z M6,13.1h12v-2H6V13.1z"></path>
+            </svg>
 
+          </div>
         </div>
       </div>
-        <div id="menu-list">
-          <!-- <ul>
+      <div id="menu-list">
+        <!-- <ul>
             <li>New group</li>
             <li>New community</li>
             <li>Starred messages</li>
             <li>Settings</li>
             <li>Log out</li>
           </ul> -->
-        </div>
-      
+      </div>
+
 
       <div class="filter-msg">
         <!-- <div>
@@ -161,22 +170,42 @@
       <!-- Here start contact person list-->
 
       <div class="contact-list">
-<ul>
-        <li class="person" id="person">
-          <div class="person-img-details">
-            <img src="./images/person1.png" alt="contact1" height="50px" width="50px" style="border-radius:50%;">
-          </div>
-          <div class="person-name">
-            <div class="person-name-details">
-              <p>Aircampus July Batch</p>
+        <ul>
+          <li class="person" id="person">
+            <div class="person-img-details">
+              <img src="https://ih1.redbubble.net/image.3101594806.9206/st,small,507x507-pad,600x600,f8f8f8.jpg" alt="contact1"
+                width="55px" height="55px" style="border-radius:50%;">
             </div>
-            <div class="person-msg">Mayur : hi Guys!</div>
-          </div>
-          <div class="person-lastTime">10:50 AM</div>
-          
-        </li>
+            <div class="person-name">
+              <div class="person-name-details">
+                <div class="contact-name" id="contact-name">Elon Mast 😎</div>
+                <div class="message-time" id="last-message-time">10:50 am</div>
+              </div>
+              <div class="person-msg">
+                gonna buy pakistan tomorrow🤣😂
+                
+              </div>
+            </div>
+          </li>
+          <li class="person" id="person">
+            <div class="person-img-details">
+              <img src="https://pbs.twimg.com/media/EZRbz5SXgAYBO1g.jpg" alt="contact2"
+                width="55px" height="55px"  style="border-radius:50%; object-fit: cover;">
+            </div>
+            <div class="person-name">
+              <div class="person-name-details">
+                <div class="contact-name" id="contact-name">Narendra Moodi 🥴</div>
+                <div class="message-time" id="last-message-time">10:48 am</div>
+              </div>
+              <div class="person-msg">
+                Mere Bhaiyo behno 
+                
+              </div>
+            </div>
+          </li>
+        
 
-        <li class="person">
+          <!-- <li class="person">
           <div class="person-img-details">
             <img src="./images/person1.png" alt="contact1" height="50px" width="50px" style="border-radius:50%;">
           </div>
@@ -356,7 +385,7 @@
               <div class="person-msg">Harsh : hi bro</div>
             </div>
             <div class="person-lastTime">Yesterday</div>
-          </li>
+          </li> -->
 
         </ul>
 
