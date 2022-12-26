@@ -21,7 +21,7 @@ const chatPersonName = document.querySelector("person-name")
 inputBox.addEventListener("click", ()=>{
     searchIcon.innerHTML =`<i class="bi bi-arrow-left"></i>`
     searchIcon.style.color = "#009688"
-    
+     push
     
 });
 
