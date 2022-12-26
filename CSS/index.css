@@ -97,54 +97,59 @@ body {
 }
 
 .search {
-  height: 10vh;
+  height: 7vh;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
   border: 1px solid rgba(128, 128, 128, 0.301);
 }
 
 .search-box {
   position: relative;
   border: none;
-  width: 80%;
-  margin-top: .6em;
+  width: 100%;
+  margin-top: .4em;
 
 }
 
 .search-icon {
-  width: 10%;
+  width: 14.5%;
   position: absolute;
-  top: .5em;
+  top: 0em;
   left: 1.5em;
-  font-size: 1.2rem;
+  font-size: .8rem;
+  background-color: #f0f2f5;
+  padding: .6em .8em;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  
 }
 
 .input-box {
-  margin-left: 0.3rem;
-  width: 100%;
-  text-align: center;
-  border-radius: 25px;
+  margin-left: 5.5em;
+  width: 80%;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   border: none;
   color: #f0f2f5;
   background-color: #f0f2f5;
   box-sizing: border-box;
-  padding: .7em;
-  font-size: 1rem;
+  padding: .6em;
+  font-size: .8rem;
   color: black;
 }
 
 .filter {
-  font-size: 2rem;
-  margin-top: .5em;
+  font-size: 1.3rem;
+  margin-left: .0em;
   width: 10%;
   text-align: center;
   /* background-color: #00a884; */
   border-radius: 50%;
-  color:black;
+  color:rgb(150, 145, 145);
   cursor: pointer;
 }
 
@@ -161,8 +166,8 @@ body {
   line-height: 2; 
   font-size: 1.2rem;
   border: 1px solid rgba(190, 184, 184, 0.377);
-  top: 60px;
-  right:35px;
+  top: 50px;
+  right:25px;
   transition: 0.1ms;
   list-style: none;
   cursor: pointer;
@@ -204,6 +209,7 @@ body {
 }
 .filter1{
   width: 10%;
+  color: rgb(216, 209, 207);
 }
 .filter-img{
   width: 50px;
@@ -231,7 +237,8 @@ body {
    color: white;
    font-weight: bold;
    border-radius: 50%;
-   width: 15%;
+   width: 20%;
+   
    
 }
 #msg-drp{
@@ -288,15 +295,15 @@ body {
 }
 .name{
   color: #008069;
-  padding: 0.8em 2em;
-  font-size: 1.1rem;
+  padding: 0.6em 2em;
+  font-size: 1rem;
 
 }
 .profile-user_name{
   display: flex;
   justify-content: space-between;
-  padding: 0.8em 1.5em;
-  font-size: 1.2rem;
+  padding: 0.8em 1.9em;
+  font-size: 1rem;
 }
 .warn{
   background-color: #f0f2f5;
@@ -309,13 +316,13 @@ body {
 .about-para{
   padding: 0.8em 2em;
   color: #008069;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .about-info{
   display: flex;
   justify-content: space-between;
-  padding: 0.6em 1.5em;
-  font-size: 1.2rem;
+  padding: 0.2em 1.9em;
+  font-size: 1rem;
 }
 
 
