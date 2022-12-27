@@ -75,6 +75,18 @@ body {
   cursor: pointer;
   border-right: thin solid #a5b2c42e;
 }
+.icon-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.icon-box:active{
+  transition: 0.2s;
+  background-color: #d4d4d4;
+}
 
 .profile-pic {
   width: 45px;
@@ -152,19 +164,20 @@ input.input-box::placeholder {
   width: 35px;
 }
 
-.menu-list {
-  position: absolute;
-  top: 35px;
-  width: 100%;
+#menu-list {
+  display: none;
+}
+.hide {
+  display: none;
 }
 
 #menu-list>ul {
   position: absolute;
   background-color: #ffffff;
   z-index: 1;
-  padding: 1em;
+  padding: 0.5rem 0;
   line-height: 2;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border: 1px solid rgba(190, 184, 184, 0.377);
   top: 60px;
   right: 35px;
@@ -172,24 +185,21 @@ input.input-box::placeholder {
   list-style: none;
   cursor: pointer;
   transition: .01s;
-  border-radius: 10px;
-  box-shadow: #555;
+  border-radius: 5px;
   transition: 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #menu-list>ul>li {
-  /* width: 150%; */
-  /* padding-left: 1em ; */
-  padding: 0rem 0.5rem;
+  padding: 0.3rem 3rem 0.3rem 1.5rem;
+  color: #3b4a54;
 }
 
 #menu-list>ul>li:hover {
   background-color: rgba(240, 234, 234, 0.671);
 }
 
-.hide {
-  visibility: hidden;
-}
+
 
 .grp-menu {
   border: none;
