@@ -15,6 +15,19 @@ const rightMost = document.querySelector(".right-most-container");
 const chatPerson = document.querySelector(".right-chatbox") 
 const chatpersonImg = document.querySelector("person-img-details")
 const chatPersonName = document.querySelector("person-name")
+const menuBar = document.querySelector('#menu-icon');
+
+
+menuBar.addEventListener('click', ()=>{
+  menuList.style.display = "block"
+})
+
+document.addEventListener("click", (event)=>{
+  if(!menuList.contains(event.target)){
+    menuList.classList = "hide"
+    // filterMsg.classList = "hide"/
+  } 
+})
 
 
 
@@ -24,16 +37,7 @@ inputBox.addEventListener("click", ()=>{
     
 });
 
-grpMenu.addEventListener("click",()=>{
-    menuList.innerHTML =`<ul>
-    <li>New group</li>
-    <li>New community</li>
-    <li>Starred messages</li>
-    <li>Settings</li>
-    <li>Log out</li>
-  </ul>`
-  menuList.classList.toggle('hide')
-})
+
 
 let logout ="";
 menuList.addEventListener("click", (e)=>{
