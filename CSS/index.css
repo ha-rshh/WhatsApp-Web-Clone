@@ -111,7 +111,6 @@ body {
 }
 
 .search {
-  height: 8vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -120,11 +119,13 @@ body {
   padding-bottom: 10px;
   border: thin solid rgba(128, 128, 128, 0.101);
 }
-
+.search-container{
+  display: flex;
+}
 .search-box {
   position: relative;
   border: none;
-  width: 80%;
+  width:100%;
   margin-top: .6em;
 }
 
@@ -147,6 +148,7 @@ body {
   box-sizing: border-box;
   padding: .7em;
   font-size: 13px;
+  margin-left: 10px;
 }
 
 .filter {

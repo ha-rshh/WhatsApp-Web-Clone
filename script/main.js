@@ -97,10 +97,10 @@ profIcon.addEventListener("click", ()=>{
 })
 
 document.addEventListener("click", (event)=>{
-  
-  if(!grpMenu.contains(event.target) && !filter.contains(event.target)){
-    menuList.classList = "hide"
-    filterMsg.classList = "hide"
+  console.log(menuList)
+  if(!menuBar.contains(event.target) && !filter.contains(event.target)){
+    menuList.style.display = "none"
+    filterMsg.style.display = "none"
     
   } 
   
