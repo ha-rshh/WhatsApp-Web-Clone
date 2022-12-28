@@ -96,13 +96,16 @@ profIcon.addEventListener("click", ()=>{
 })
 
 
-// document.addEventListener("click", (e)=>{
-//   if(e.target !== svg && e.target.id !== "filter-msg"){
-//     menuList.classList.remove("menu-list")
+document.addEventListener("click", (event)=>{
+  console.log(menuList)
+  if(!menuBar.contains(event.target) && !filter.contains(event.target)){
+    menuList.style.display = "none"
+    filterMsg.style.display = "none"
     
-//   }
-//   console.log(e)
-// })
+  } 
+  
+})
+  
   
 statusIcon.addEventListener('click',()=>{
   window.location.href = "statuspage.html";
@@ -118,27 +121,25 @@ selectPerson.addEventListener("click",(e)=> {
 })
 
 
-const input = document.getElementsByClassName('input-box');
-const ul = document.getElementsByTagName('ul');
-const li = document.getElementsByTagName('li');
 
+const li = document.querySelectorAll('.person');
 
-function myFunc(event){
-  const filters = input[0].value.toUpperCase();
+function myFunc(event) {
 
-if(event.key === "Enter" ){
-  for(let i = 0; i < li.length;i++){
-    let a = li[i].getElementsByTagName('h3');
-     let txtValue = a[0].textContent || a[0].innerText;
- 
-     if(txtValue.toUpperCase().indexOf(filters) > -1){
-       li[i].style.display = "";
-     }
-     else{
-       li[i].style.display = 'none';
-     }
-   }
+  const filters = inputBox.value.toUpperCase();
+  if (event.key === "Enter") {
+    for (let i = 0; i < li.length; i++) {
+      let a = li[i].getElementsByClassName('contact-name');
+      let txtValue = a[0].textContent || a[0].innerText;
+  console.log(a)
+      console.log(txtValue)
+      if ((txtValue.toUpperCase()).indexOf(filters) > -1){
+        li[i].style.display = "";
+      }
+      else {
+        li[i].style.display = 'none';
+      }
+    }
+  }
 }
-
-}
-input[0].addEventListener("keypress" , myFunc);
+inputBox.addEventListener("keypress" , myFunc);
