@@ -1,4 +1,4 @@
-const inputBox = document.querySelector(".input-box");
+const input = document.querySelector(".input-box");
 const searchIcon = document.querySelector(".search-icon");
 const grpMenu = document.querySelector(".grp-menu")
 const menuList = document.getElementById("menu-list");
@@ -12,49 +12,49 @@ const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector('.status');
 const selectPerson = document.querySelector('.contact-list')
 const rightMost = document.querySelector(".right-most-container");
-const chatPerson = document.querySelector(".right-chatbox") 
+const chatPerson = document.querySelector(".right-chatbox")
 const chatpersonImg = document.querySelector("person-img-details")
 const chatPersonName = document.querySelector("person-name")
 const menuBar = document.querySelector('#menu-icon');
 
 
-menuBar.addEventListener('click', ()=>{
+menuBar.addEventListener('click', () => {
   menuList.style.display = "block"
 })
 
-document.addEventListener("click", (event)=>{
-  if(!menuList.contains(event.target)){
+document.addEventListener("click", (event) => {
+  if (!menuList.contains(event.target)) {
     menuList.classList = "hide"
     // filterMsg.classList = "hide"/
-  } 
+  }
 })
 
 
 
-inputBox.addEventListener("click", ()=>{
-    searchIcon.innerHTML =`<i class="bi bi-arrow-left"></i>`
-    searchIcon.style.color = "#009688"
-    
+input.addEventListener("click", () => {
+  searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`
+  searchIcon.style.color = "#009688"
+
 });
 
 
 
-let logout ="";
-menuList.addEventListener("click", (e)=>{
-logout = e.path[0].innerHTML;
+let logout = "";
+menuList.addEventListener("click", (e) => {
+  logout = e.path[0].innerHTML;
 
-if(logout == "Log out"){
-// logout = e.path[2].firstChild.lastElementChild
-// if(logout.innerText == "Log out")
-  window.location.href = "./loginpage.html";
-}
-// console.log(logout)
+  if (logout == "Log out") {
+    // logout = e.path[2].firstChild.lastElementChild
+    // if(logout.innerText == "Log out")
+    window.location.href = "./loginpage.html";
+  }
+  // console.log(logout)
 })
 
 
 
-filter.addEventListener("click", ()=>{
-   filterMsg.innerHTML = `<div>
+filter.addEventListener("click", () => {
+  filterMsg.innerHTML = `<div>
                           <p id="filter-msg_para">FILTERED BY UNREAD</p>
                           </div>
 
@@ -76,22 +76,22 @@ filter.addEventListener("click", ()=>{
    </div>
  </div>
 `
-    filter.style.background = "#00a884"
-    filter.style.color = "white"
+  filter.style.background = "#00a884"
+  filter.style.color = "white"
   //  filter.style.borderRadius = "50%"
-   filterMsg.classList.toggle("hide");
-   contactList.style.display = "none"
-  
-   function chatboxHeader () {
-    
-   }
-   
+  filterMsg.classList.toggle("hide");
+  contactList.style.display = "none"
+
+  function chatboxHeader() {
+
+  }
+
 })
 
-profilePic.addEventListener("click", ()=>{
+profilePic.addEventListener("click", () => {
   profileContainer.style.display = "block"
 })
-profIcon.addEventListener("click", ()=>{
+profIcon.addEventListener("click", () => {
   profileContainer.style.display = "none"
 })
 
@@ -99,46 +99,43 @@ profIcon.addEventListener("click", ()=>{
 // document.addEventListener("click", (e)=>{
 //   if(e.target !== svg && e.target.id !== "filter-msg"){
 //     menuList.classList.remove("menu-list")
-    
+
 //   }
 //   console.log(e)
 // })
-  
-statusIcon.addEventListener('click',()=>{
+
+statusIcon.addEventListener('click', () => {
   window.location.href = "statuspage.html";
 });
 
 
-selectPerson.addEventListener("click",(e)=> {
+selectPerson.addEventListener("click", (e) => {
   rightMost.style.display = "none";
   chatPerson.style.display = "block";
   /*chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;*/
   chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
-  
+
 })
 
 
-const input = document.getElementsByClassName('input-box');
-const ul = document.getElementsByTagName('ul');
-const li = document.getElementsByTagName('li');
+const li = document.querySelectorAll('.person');
 
+function myFunc(event) {
 
-function myFunc(event){
-  const filters = input[0].value.toUpperCase();
-
-if(event.key === "Enter" ){
-  for(let i = 0; i < li.length;i++){
-    let a = li[i].getElementsByTagName('h3');
-     let txtValue = a[0].textContent || a[0].innerText;
- 
-     if(txtValue.toUpperCase().indexOf(filters) > -1){
-       li[i].style.display = "";
-     }
-     else{
-       li[i].style.display = 'none';
-     }
-   }
+  const filters = input.value.toUpperCase();
+  if (event.key === "Enter") {
+    for (let i = 0; i < li.length; i++) {
+      let a = li[i].getElementsByClassName('contact-name');
+      let txtValue = a[0].textContent || a[0].innerText;
+  console.log(a)
+      console.log(txtValue)
+      if ((txtValue.toUpperCase()).indexOf(filters) > -1){
+        li[i].style.display = "";
+      }
+      else {
+        li[i].style.display = 'none';
+      }
+    }
+  }
 }
-
-}
-input[0].addEventListener("keypress" , myFunc);
+input.addEventListener("keypress" , myFunc);
