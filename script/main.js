@@ -96,13 +96,16 @@ profIcon.addEventListener("click", ()=>{
 })
 
 
-// document.addEventListener("click", (e)=>{
-//   if(e.target !== svg && e.target.id !== "filter-msg"){
-//     menuList.classList.remove("menu-list")
+document.addEventListener("click", (event)=>{
+  console.log(menuList)
+  if(!menuBar.contains(event.target) && !filter.contains(event.target)){
+    menuList.style.display = "none"
+    filterMsg.style.display = "none"
     
-//   }
-//   console.log(e)
-// })
+  } 
+  
+})
+  
   
 statusIcon.addEventListener('click',()=>{
   window.location.href = "statuspage.html";
