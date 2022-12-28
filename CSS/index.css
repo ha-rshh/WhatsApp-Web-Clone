@@ -111,50 +111,54 @@ body {
 }
 
 .search {
-  position: relative;
-  padding: 0.4rem;
-  border: thin solid rgba(128, 128, 128, 0.101);
-}
-
-.search-container {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+  border: thin solid rgba(128, 128, 128, 0.101);
 }
-
+.search-container{
+  display: flex;
+}
 .search-box {
   position: relative;
-  width: 90%;
+  border: none;
+  width:100%;
+  margin-top: .6em;
 }
 
 .search-icon {
+  width: 5%;
   position: absolute;
-  top: .4em;
-  left: 1rem;
-  font-size: 1.1rem;
+  top: .5em;
+  left: 1.5em;
+  font-size: 1rem;
   color: #54656f;
 }
 
 .input-box {
-  width: 100%;
+  width: 25vw;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 25px;
   border: none;
   color: #54656f;
   background-color: #f0f2f5;
   box-sizing: border-box;
-  padding: 0.5rem;
-  font-size: 1rem;
-}
-
-input.input-box::placeholder {
-  position: absolute;
-  left: 4rem;
+  padding: .7em;
+  font-size: 13px;
+  margin-left: 10px;
 }
 
 .filter {
+  margin-top: .5em;
+  color: #54656f;
+  padding: .2rem;
+  text-align: center;
+  /* background-color: #00a884; */
   border-radius: 50%;
+  color:black;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -180,7 +184,7 @@ input.input-box::placeholder {
   font-size: 1rem;
   border: 1px solid rgba(190, 184, 184, 0.377);
   top: 60px;
-  right: 35px;
+  right:35px;
   transition: .01s;
   list-style: none;
   cursor: pointer;
@@ -225,6 +229,7 @@ input.input-box::placeholder {
 
 .filter1 {
   width: 10%;
+  color: rgb(216, 209, 207);
 }
 
 .filter-img {
@@ -249,15 +254,14 @@ input.input-box::placeholder {
   margin-right: 50px;
   padding: 1em 0;
 }
-
-.msg-count {
-  background-color: #00a884;
-  text-align: center;
-  color: white;
-  font-weight: bold;
-  border-radius: 50%;
-  width: 15%;
-
+.msg-count{
+   background-color: #00a884;
+   text-align: center;
+   color: white;
+   font-weight: bold;
+   border-radius: 50%;
+   width: 15%;
+   
 }
 
 #msg-drp {
@@ -317,16 +321,16 @@ input.input-box::placeholder {
 
 .name {
   color: #008069;
-  padding: 0.8em 2em;
-  font-size: 1.1rem;
+  padding: 0.6em 2em;
+  font-size: 1rem;
 
 }
 
 .profile-user_name {
   display: flex;
   justify-content: space-between;
-  padding: 0.8em 1.5em;
-  font-size: 1.2rem;
+  padding: 0.8em 1.9em;
+  font-size: 1rem;
 }
 
 .warn {
@@ -342,14 +346,14 @@ input.input-box::placeholder {
 .about-para {
   padding: 0.8em 2em;
   color: #008069;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .about-info {
   display: flex;
   justify-content: space-between;
-  padding: 0.6em 1.5em;
-  font-size: 1.2rem;
+  padding: 0.2em 1.9em;
+  font-size: 1rem;
 }
 
 
