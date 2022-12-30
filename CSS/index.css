@@ -364,7 +364,7 @@ input.input-box::placeholder {
 ::-webkit-scrollbar-track {
   background: transparent;
 }
-.contact-list {
+#contact-list {
   
   overflow-y: scroll;
   height: 83.8%;  
