@@ -270,6 +270,7 @@ input.input-box::placeholder {
 
 #profile-container {
     z-index: 2;
+    height: 100%;
     position: absolute;
     top: 0;
     background-color: #f0f2f5;
