@@ -172,11 +172,11 @@ ans.then((res) => {
         </div>
         <div class="person-name">
           <div class="person-name-details">
-            <div class="contact-name" id="contact-name">${ele.login} 😎</div>
+            <div class="contact-name" id="contact-name">${ele.login}</div>
             <div class="message-time" id="last-message-time">10:50 am</div>
           </div>
           <div class="person-msg">
-            gonna buy pakistan tomorrow🤣😂
+            gonna buy pakistan tomorrow 
           </div>
         </div>
       </li>`

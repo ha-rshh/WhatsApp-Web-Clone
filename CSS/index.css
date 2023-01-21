@@ -418,13 +418,18 @@ input.input-box::placeholder {
 
 .person-name {
   width: calc(100% - 15%);
-
   height: 100%;
   display: flex;
   justify-items: center;
   flex-direction: column;
 }
-
+.current-chat{
+  position: relative;
+  /* bottom: 8px; */
+  margin-left: 5px;
+  font-size: 1.2rem;
+}
+  
 .person-name-details {
   flex: 50%;
   display: flex;
@@ -555,7 +560,7 @@ input.input-box::placeholder {
 }
 
 .chatbox-head {
-  padding: 5px 16px;
+  padding: 3px 16px;
   width: 100%;
   background-color: rgb(240, 242, 245);
   display: flex;
@@ -571,10 +576,10 @@ input.input-box::placeholder {
 }
 
 .contact img {
-  height: 40px;
-  width: 40px;
-  border: none;
-  border-radius: 50%;
+  height: 45px;
+    width: 45px;
+    border: none;
+    border-radius: 50%;
 }
 
 
@@ -630,4 +635,32 @@ input.input-box::placeholder {
   outline: none;
   border: none;
   background-color: white;
+}
+.today-span{
+  background-color: white;
+  border-radius: 5px;
+  padding: 6px 8px;
+  color: #54656f;
+  font-size: 0.9rem;
+}
+.chat-initial{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+.encryption-msg{
+  background-color: #ffeecd;
+  display: flex;
+  border-radius: 5px;
+  color: #54656f;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.msgcontainer{
+  font-size: 0.9rem;
 }
