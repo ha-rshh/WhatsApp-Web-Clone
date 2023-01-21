@@ -366,13 +366,11 @@ input.input-box::placeholder {
   background: transparent;
 }
 #contact-list {
-  
   overflow-y: scroll;
-  height: 83.8%;  
+  height: 79vh;  
 }
 
 .person {
-
   display: flex;
   height: 4.5rem;
 }
@@ -405,7 +403,7 @@ input.input-box::placeholder {
 .contact-name{
   position: relative;
   top: 5px;
-  font-size: 1.12rem;
+  font-size: 18px;
   color: #111b21;
   font-weight: 400;
   text-rendering: optimizeLegibility;
@@ -415,72 +413,18 @@ input.input-box::placeholder {
 .person-msg{
   position: relative;
   flex: 50%;
+  font-size: 13px;
   color:#667781;
 }
 .message-time{
   position: relative;
   top: 0.5rem;
   right: 1.5rem;
-  font-size: 0.9rem;
+  font-size: 12px;
   color:#667781;
 
   
 }
-
-
-
-/* 
-
-
-
-
-
-.person-name-details {
-  font-size: 18px;
-  font-weight: 400;
-  color: #111b21;
-
-}
-
-.person-msg {
-  font-size: 13px;
-  color: #667781;
-
-}
-
-.person-name {
-  width: 40vw;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-sizing: border-box;
-  padding: 10px 0px;
-  border-bottom: thin solid rgba(128, 128, 128, 0.101);
-}
-
-.person-lastTime {
-  width: 15vw;
-  font-size: 12px;
-  color: #667781;
-  border-bottom: thin solid rgba(128, 128, 128, 0.101);
-
-}
-
-.person-lastTime {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-}
-*/
-
-
-
-
-
-
-
-
 
 /* Here the Styling of Default-Right-container */
 
@@ -523,6 +467,7 @@ input.input-box::placeholder {
   height: 100%;
   width: 100%;
   background: url(https://camo.githubusercontent.com/854a93c27d64274c4f8f5a0b6ec36ee1d053cfcd934eac6c63bed9eaef9764bd/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67);
+  
 }
 
 .chatbox-head {
@@ -549,6 +494,10 @@ input.input-box::placeholder {
 }
 
 
+.chat-person-name{
+  height: 100%;
+  margin-left: 5px;
+}
 .option {
   width: 10vw;
   display: flex;
