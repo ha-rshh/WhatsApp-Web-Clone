@@ -33,7 +33,6 @@ document.addEventListener("click", (event) => {
 inputBox.addEventListener("click", () => {
   searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`
   searchIcon.style.color = "#009688"
-
 });
 
 
@@ -88,10 +87,10 @@ filter.addEventListener("click", () => {
 })
 
 profilePic.addEventListener("click", () => {
-  profileContainer.style.display = "block"
+  profileContainer.style.visibility = "visible"
 })
 profIcon.addEventListener("click", () => {
-  profileContainer.style.display = "none"
+  profileContainer.style.visibility = "hidden"
 })
 
 
@@ -112,17 +111,17 @@ statusIcon.addEventListener('click', () => {
 
 
 selectPerson.addEventListener("click", (e) => {
+  var path = e.path || (e.composedPath && e.composedPath());
 
-  e.path.forEach((ele, i) => {
-
+  console.log(e)
+  path.forEach((ele, i) => {
     if (ele.classList && ele.classList.contains('person')) {
-      // console.log(e.target)
       rightMost.style.display = "none";
       chatPerson.style.display = "block";
-      chatPersonImg.src = e.path[i].querySelector('img').src;
-      //console.log(e.path[i].children[0].children[0], 'img')
-      chatPersonName.innerText = e.path[i].querySelector('#contact-name').innerText;
-      console.log(e.path[i].querySelector('#contact-name'), 'name');
+      chatPersonImg.src = path[i].querySelector('img').src;
+      
+      chatPersonName.innerText = path[i].querySelector('#contact-name').innerText;
+      // console.log(e.path[i].querySelector('#contact-name'), 'name');
       return
     }
   })
