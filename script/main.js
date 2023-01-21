@@ -5,12 +5,12 @@ const menuList = document.getElementById("menu-list");
 const filter = document.querySelector(".filter");
 const filterMsg = document.querySelector(".filter-msg");
 const msgDrop = document.getElementById("msg-drop");
-const contactList = document.querySelector(".contact-list");
+const contactList = document.querySelector("#contact-list");
 const profilePic = document.querySelector(".profile-img");
 const profileContainer = document.getElementById("profile-container");
 const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector('.status');
-const selectPerson = document.querySelector('.contact-list')
+const selectPerson = document.querySelector('#contact-list')
 const rightMost = document.querySelector(".right-most-container");
 const chatPerson = document.querySelector(".right-chatbox") 
 const chatpersonImg = document.querySelector("person-img-details")
@@ -112,13 +112,13 @@ statusIcon.addEventListener('click',()=>{
 });
 
 
-selectPerson.addEventListener("click",(e)=> {
-  rightMost.style.display = "none";
-  chatPerson.style.display = "block";
+//selectPerson.addEventListener("click",(e)=> {
+  //rightMost.style.display = "none";
+ // chatPerson.style.display = "block";
   /*chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;*/
-  chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
+  //chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
   
-})
+//})
 
 
 
@@ -143,3 +143,36 @@ function myFunc(event) {
   }
 }
 inputBox.addEventListener("keypress" , myFunc);
+
+
+
+
+
+/* API Integration */
+
+let ans = fetch('https://api.github.com/users')
+
+ans.then((res)=>{
+    return res.json()
+}).then((result)=>{
+  console.log(result)
+    document.getElementById('contact-list').innerHTML = result.map((ele)=>{
+        console.log(ele)
+        return `<li class="person" id="person">
+        <div class="person-img-details">
+          <img src="${ele.avatar_url}" alt="contact1"
+            width="55px" height="55px" style="border-radius:50%;">
+        </div>
+        <div class="person-name">
+          <div class="person-name-details">
+            <div class="contact-name" id="contact-name">${ele.login} 😎</div>
+            <div class="message-time" id="last-message-time">10:50 am</div>
+          </div>
+          <div class="person-msg">
+            gonna buy pakistan tomorrow🤣😂
+          </div>
+        </div>
+      </li>`
+        
+    }).join("")
+})
