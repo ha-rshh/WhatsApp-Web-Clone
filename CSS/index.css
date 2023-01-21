@@ -7,19 +7,12 @@
 }
 
 body {
+  scroll-behavior: smooth;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #ccc;
-}
-
-.background-green {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #009688;
 }
 
 .main-container {
@@ -51,18 +44,7 @@ body {
   overflow: hidden;
 }
 
-.main-container .right-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.5;
-  z-index: -9899;
-}
-
-/* style for icon container */
+/*x                         style for icon container                       */
 
 .icons-container {
   padding: 10px 16px;
@@ -267,9 +249,7 @@ input.input-box::placeholder {
   margin-left: 10px;
 }
 
-
-
-/* style for profile */
+/*x                              style for profile                            */
 
 #profile-container {
   z-index: 2;
@@ -324,18 +304,21 @@ input.input-box::placeholder {
   transition: .02s;
 }
 
-.profile-name, .about {
+.profile-name,
+.about {
   background-color: #ffffff;
   width: 100%;
   padding: 10px 16px;
 }
 
-.username-input, .a-input {
+.username-input,
+.a-input {
   width: 80%;
   margin-left: 10px;
 }
 
-.name, .about-para {
+.name,
+.about-para {
   color: #008069;
   padding: 0.8em 0.5rem;
   font-size: 1.1rem;
@@ -347,31 +330,35 @@ input.input-box::placeholder {
   display: flex;
   padding: 0.8em 1.5em;
   font-size: 1.2rem;
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
 }
 
 .profile-user-input {
   border-bottom: 2px solid #3b4a54af;
   display: flex;
   justify-content: space-between;
-  /* display: none; */
+  display: none;
 }
 
-.name-checkBtn, .about-checkBtn{
+.name-checkBtn,
+.about-checkBtn {
   display: flex;
   gap: 8px;
   margin-right: 3px;
   align-items: center;
 }
-.name-checkBtn svg, .about svg{
+
+.name-checkBtn svg,
+.about svg {
   height: 25px;
   width: 25px;
   fill: #c4dae8;
   cursor: pointer;
-} 
+}
 
-.name-input > input, .about-text input {
+.name-input>input,
+.about-text input {
   outline: none;
   border: none;
   padding: 0 10px;
@@ -385,21 +372,26 @@ input.input-box::placeholder {
   padding: 0.8em 2em 1em;
   color: rgb(165, 162, 162);
 }
-.about-input{
+
+.about-input {
   display: flex;
-  justify-content:space-between;
-  border-bottom: 2px solid #3b4a54af; 
+  justify-content: space-between;
+  border-bottom: 2px solid #3b4a54af;
   padding: 10px px;
-}
-.about-info {
   display: none;
+}
+
+.about-info {
   justify-content: space-between;
   padding: 0.6em 1.5em;
   font-size: 1.2rem;
+  display: flex;
 }
 
 
-/* Here the styling for Contact list */
+
+/*x                             Here the styling for Contact list                       */
+
 ::-webkit-scrollbar {
   width: 6px !important;
   height: 6px !important;
@@ -490,58 +482,6 @@ input.input-box::placeholder {
   color: #667781;
 }
 
-
-
-/* 
-.person-name-details {
-  font-size: 18px;
-  font-weight: 400;
-  color: #111b21;
-
-}
-
-.person-msg {
-  font-size: 13px;
-  color: #667781;
-
-}
-
-.person-name {
-  width: 40vw;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  box-sizing: border-box;
-  padding: 10px 0px;
-  border-bottom: thin solid rgba(128, 128, 128, 0.101);
-}
-
-.person-lastTime {
-  width: 15vw;
-  font-size: 12px;
-  color: #667781;
-  border-bottom: thin solid rgba(128, 128, 128, 0.101);
-
-}
-
-.person-lastTime {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-}
-*/
-
-
-
-
-
-
-
-
-
-/* Here the Styling of Default-Right-container */
-
 .right-most-container {
   height: 100%;
   width: 100%;
@@ -554,7 +494,7 @@ input.input-box::placeholder {
   gap: 1rem;
   padding-top: 100px;
   box-sizing: border-box;
-  border-bottom: 5px solid rgb(37, 211, 102);
+  border-bottom: 7px solid rgb(37, 211, 102);
 
 }
 
@@ -571,11 +511,7 @@ input.input-box::placeholder {
   box-sizing: border-box;
 }
 
-
-/* right chat-box */
-
-
-
+/* x             right chat-box              */
 .right-chatbox {
   z-index: 545;
   display: none;
@@ -606,6 +542,10 @@ input.input-box::placeholder {
   gap: 20px;
 }
 
+.contact:hover {
+  cursor: pointer;
+}
+
 .contact img {
   height: 45px;
   width: 45px;
@@ -613,12 +553,19 @@ input.input-box::placeholder {
   border-radius: 50%;
 }
 
-
 .option {
-  width: 10vw;
   display: flex;
+  gap: 1.5rem;
+  margin-right: 10px;
+  align-items: center;
   justify-content: space-around;
-  color: rgb(84, 101, 111);
+}
+
+.option svg {
+  height: 25px;
+  width: 30px;
+  fill: #54656f;
+  cursor: pointer;
 }
 
 .chat {
@@ -632,13 +579,13 @@ input.input-box::placeholder {
   bottom: 0px;
   width: 100%;
   background-color: rgb(240, 242, 245);
-  display: flex;
+  display: none;
   gap: 14px;
   justify-content: space-around;
   align-items: center;
   color: rgb(84, 101, 111);
   position: absolute;
-
+  z-index: 3;
 }
 
 .emoji-attach {
