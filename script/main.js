@@ -12,49 +12,49 @@ const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector('.status');
 const selectPerson = document.querySelector('#contact-list')
 const rightMost = document.querySelector(".right-most-container");
-const chatPerson = document.querySelector(".right-chatbox") 
-const chatpersonImg = document.querySelector("person-img-details")
-const chatPersonName = document.querySelector("person-name")
+const chatPerson = document.querySelector(".right-chatbox")
+let chatPersonName = document.querySelector(".person-name")
 const menuBar = document.querySelector('#menu-icon');
+let chatPersonImg = document.querySelector('.person-img-details img')
+const chatBoxInput = document.querySelector('.chatbox-bottom')
 
 
-menuBar.addEventListener('click', ()=>{
+menuBar.addEventListener('click', () => {
   menuList.style.display = "block"
 })
 
-document.addEventListener("click", (event)=>{
-  if(!menuList.contains(event.target)){
+document.addEventListener("click", (event) => {
+  if (!menuList.contains(event.target)) {
     menuList.classList = "hide"
     // filterMsg.classList = "hide"/
-  } 
+  }
 })
 
 
 
-inputBox.addEventListener("click", ()=>{
-    searchIcon.innerHTML =`<i class="bi bi-arrow-left"></i>`
-    searchIcon.style.color = "#009688"
-    
+inputBox.addEventListener("click", () => {
+  searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`
+  searchIcon.style.color = "#009688"
 });
 
 
 
-let logout ="";
-menuList.addEventListener("click", (e)=>{
-logout = e.path[0].innerHTML;
+let logout = "";
+menuList.addEventListener("click", (e) => {
+  logout = e.path[0].innerHTML;
 
-if(logout == "Log out"){
-// logout = e.path[2].firstChild.lastElementChild
-// if(logout.innerText == "Log out")
-  window.location.href = "./loginpage.html";
-}
-// console.log(logout)
+  if (logout == "Log out") {
+    // logout = e.path[2].firstChild.lastElementChild
+    // if(logout.innerText == "Log out")
+    window.location.href = "./loginpage.html";
+  }
+  // console.log(logout)
 })
 
 
 
-filter.addEventListener("click", ()=>{
-   filterMsg.innerHTML = `<div>
+filter.addEventListener("click", () => {
+  filterMsg.innerHTML = `<div>
                           <p id="filter-msg_para">FILTERED BY UNREAD</p>
                           </div>
 
@@ -76,49 +76,58 @@ filter.addEventListener("click", ()=>{
    </div>
  </div>
 `
-    filter.style.background = "#00a884"
-    filter.style.color = "white"
+  filter.style.background = "#00a884"
+  filter.style.color = "white"
   //  filter.style.borderRadius = "50%"
-   filterMsg.classList.toggle("hide");
-   contactList.style.display = "none"
-  
-   function chatboxHeader () {
-    
-   }
-   
+  filterMsg.classList.toggle("hide");
+  contactList.style.display = "none"
+
+  function chatboxHeader() {
+
+  }
+
 })
 
-profilePic.addEventListener("click", ()=>{
-  profileContainer.style.display = "block"
+profilePic.addEventListener("click", () => {
+  profileContainer.style.visibility = "visible"
 })
-profIcon.addEventListener("click", ()=>{
-  profileContainer.style.display = "none"
+profIcon.addEventListener("click", () => {
+  profileContainer.style.visibility = "hidden"
 })
 
 
-document.addEventListener("click", (event)=>{
+document.addEventListener("click", (event) => {
   console.log(menuList)
-  if(!menuBar.contains(event.target) && !filter.contains(event.target)){
+  if (!menuBar.contains(event.target) && !filter.contains(event.target)) {
     menuList.style.display = "none"
     filterMsg.style.display = "none"
-    
-  } 
-  
+
+  }
+
 })
-  
-  
-statusIcon.addEventListener('click',()=>{
+
+
+statusIcon.addEventListener('click', () => {
   window.location.href = "statuspage.html";
 });
 
 
-//selectPerson.addEventListener("click",(e)=> {
-  //rightMost.style.display = "none";
- // chatPerson.style.display = "block";
-  /*chatPerson.children[0].children[0].children[0].innerHTML = e.path[3].children[0].children[0].innerHTML;*/
-  //chatPerson.children[0].children[0].childNodes[3].innerText = e.path[1].children[0].innerText;
-  
-//})
+selectPerson.addEventListener("click", (e) => {
+  var path = e.path || (e.composedPath && e.composedPath());
+
+  console.log(e)
+  path.forEach((ele, i) => {
+    if (ele.classList && ele.classList.contains('person')) {
+      rightMost.style.display = "none";
+      chatPerson.style.display = "block";
+      chatBoxInput.style.display = "flex"
+      chatPersonImg.src = path[i].querySelector('img').src;
+      chatPersonName.innerText = path[i].querySelector('#contact-name').innerText;
+      // console.log(e.path[i].querySelector('#contact-name'), 'name');
+      return
+    }
+  })
+})
 
 
 
@@ -131,9 +140,9 @@ function myFunc(event) {
     for (let i = 0; i < li.length; i++) {
       let a = li[i].getElementsByClassName('contact-name');
       let txtValue = a[0].textContent || a[0].innerText;
-  console.log(a)
+      console.log(a)
       console.log(txtValue)
-      if ((txtValue.toUpperCase()).indexOf(filters) > -1){
+      if ((txtValue.toUpperCase()).indexOf(filters) > -1) {
         li[i].style.display = "";
       }
       else {
@@ -142,7 +151,7 @@ function myFunc(event) {
     }
   }
 }
-inputBox.addEventListener("keypress" , myFunc);
+inputBox.addEventListener("keypress", myFunc);
 
 
 
@@ -152,27 +161,27 @@ inputBox.addEventListener("keypress" , myFunc);
 
 let ans = fetch('https://api.github.com/users')
 
-ans.then((res)=>{
-    return res.json()
-}).then((result)=>{
+ans.then((res) => {
+  return res.json()
+}).then((result) => {
   console.log(result)
-    document.getElementById('contact-list').innerHTML = result.map((ele)=>{
-        console.log(ele)
-        return `<li class="person" id="person">
+  document.getElementById('contact-list').innerHTML = result.map((ele) => {
+    // console.log(ele)
+    return `<li class="person" id="person">
         <div class="person-img-details">
           <img src="${ele.avatar_url}" alt="contact1"
             width="55px" height="55px" style="border-radius:50%;">
         </div>
         <div class="person-name">
           <div class="person-name-details">
-            <div class="contact-name" id="contact-name">${ele.login} 😎</div>
+            <div class="contact-name" id="contact-name">${ele.login}</div>
             <div class="message-time" id="last-message-time">10:50 am</div>
           </div>
           <div class="person-msg">
-            gonna buy pakistan tomorrow🤣😂
+            gonna buy pakistan tomorrow 
           </div>
         </div>
       </li>`
-        
-    }).join("")
+
+  }).join("")
 })
