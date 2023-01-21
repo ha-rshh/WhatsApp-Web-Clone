@@ -368,7 +368,7 @@ input.input-box::placeholder {
 #contact-list {
   
   overflow-y: scroll;
-  height: 83.8%;  
+  height: 100%;  
 }
 
 .person {
@@ -401,6 +401,9 @@ input.input-box::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.contact-container{
+  height: 100%;
 }
 .contact-name{
   position: relative;
