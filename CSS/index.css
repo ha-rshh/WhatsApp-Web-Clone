@@ -276,9 +276,10 @@ input.input-box::placeholder {
   height: 100%;
   position: absolute;
   top: 0;
+  left: 0;
   background-color: #f0f2f5;
-  /* visibility: hidden; */
-  transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+  visibility: hidden;
+  transition: 0.4s ease-in;
 }
 
 .prof {
@@ -303,6 +304,7 @@ input.input-box::placeholder {
 
 .prof-icon {
   padding: 1em;
+  cursor: pointer;
 }
 
 .pro {
@@ -328,14 +330,14 @@ input.input-box::placeholder {
   padding: 10px 16px;
 }
 
-.username-input {
+.username-input, .a-input {
   width: 80%;
   margin-left: 10px;
 }
 
-.name {
+.name, .about-para {
   color: #008069;
-  padding: 0.8em 2em;
+  padding: 0.8em 0.5rem;
   font-size: 1.1rem;
 
 }
@@ -348,6 +350,7 @@ input.input-box::placeholder {
   /* display: flex; */
   display: none;
 }
+
 .profile-user-input {
   border-bottom: 2px solid #3b4a54af;
   display: flex;
@@ -355,17 +358,20 @@ input.input-box::placeholder {
   /* display: none; */
 }
 
-.name-checkBtn{
+.name-checkBtn, .about-checkBtn{
   display: flex;
-  gap: 5px;
+  gap: 8px;
+  margin-right: 3px;
   align-items: center;
 }
-.name-checkBtn svg{
+.name-checkBtn svg, .about svg{
+  height: 25px;
+  width: 25px;
   fill: #c4dae8;
   cursor: pointer;
 } 
 
-.name-input > input, .about-text  input {
+.name-input > input, .about-text input {
   outline: none;
   border: none;
   padding: 0 10px;
@@ -378,12 +384,6 @@ input.input-box::placeholder {
   background-color: #f0f2f5;
   padding: 0.8em 2em 1em;
   color: rgb(165, 162, 162);
-}
-
-.about-para {
-  padding: 0.8em 2em;
-  color: #008069;
-  font-size: 1.1rem;
 }
 .about-input{
   display: flex;
@@ -647,6 +647,7 @@ input.input-box::placeholder {
 }
 
 .chatbox-bottom svg {
+
   height: 27px;
   width: 27px;
 }
