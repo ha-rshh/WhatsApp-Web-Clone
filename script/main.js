@@ -19,7 +19,7 @@ const menuBar = document.querySelector('#menu-icon');
 
 
 menuBar.addEventListener('click', ()=>{
-  menuList.style.display = "block"
+  menuList.style.displagity = "block"
 })
 
 document.addEventListener("click", (event)=>{
