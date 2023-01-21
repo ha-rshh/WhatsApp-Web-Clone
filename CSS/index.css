@@ -277,7 +277,7 @@ input.input-box::placeholder {
   position: absolute;
   top: 0;
   background-color: #f0f2f5;
-  visibility: hidden;
+  /* visibility: hidden; */
   transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -322,13 +322,13 @@ input.input-box::placeholder {
   transition: .02s;
 }
 
-.profile-name {
+.profile-name, .about {
   background-color: #ffffff;
   width: 100%;
+  padding: 10px 16px;
 }
 
 .username-input {
-  padding: px 16px;
   width: 80%;
   margin-left: 10px;
 }
@@ -341,15 +341,37 @@ input.input-box::placeholder {
 }
 
 .profile-user_name {
-  /* display: none; */
   justify-content: space-between;
   display: flex;
   padding: 0.8em 1.5em;
   font-size: 1.2rem;
+  /* display: flex; */
+  display: none;
+}
+.profile-user-input {
+  border-bottom: 2px solid #3b4a54af;
+  display: flex;
+  justify-content: space-between;
+  /* display: none; */
 }
 
-.profile-user-input {
-  display: none;
+.name-checkBtn{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.name-checkBtn svg{
+  fill: #c4dae8;
+  cursor: pointer;
+} 
+
+.name-input > input, .about-text  input {
+  outline: none;
+  border: none;
+  padding: 0 10px;
+  width: 250px;
+  font-size: 1.2rem;
+  color: #8696a0;
 }
 
 .warn {
@@ -358,18 +380,19 @@ input.input-box::placeholder {
   color: rgb(165, 162, 162);
 }
 
-.about {
-  background-color: #ffffff;
-}
-
 .about-para {
   padding: 0.8em 2em;
   color: #008069;
   font-size: 1.1rem;
 }
-
-.about-info {
+.about-input{
   display: flex;
+  justify-content:space-between;
+  border-bottom: 2px solid #3b4a54af; 
+  padding: 10px px;
+}
+.about-info {
+  display: none;
   justify-content: space-between;
   padding: 0.6em 1.5em;
   font-size: 1.2rem;
@@ -423,13 +446,14 @@ input.input-box::placeholder {
   justify-items: center;
   flex-direction: column;
 }
-.current-chat{
+
+.current-chat {
   position: relative;
   /* bottom: 8px; */
   margin-left: 5px;
   font-size: 1.2rem;
 }
-  
+
 .person-name-details {
   flex: 50%;
   display: flex;
@@ -553,10 +577,17 @@ input.input-box::placeholder {
 
 
 .right-chatbox {
+  z-index: 545;
   display: none;
   height: 100%;
   width: 100%;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
   background: url(https://camo.githubusercontent.com/854a93c27d64274c4f8f5a0b6ec36ee1d053cfcd934eac6c63bed9eaef9764bd/68747470733a2f2f7765622e77686174736170702e636f6d2f696d672f62672d636861742d74696c652d6461726b5f61346265353132653731393562366237333364393131306234303866303735642e706e67);
+  background-blend-mode: lighten;
 }
 
 .chatbox-head {
@@ -577,9 +608,9 @@ input.input-box::placeholder {
 
 .contact img {
   height: 45px;
-    width: 45px;
-    border: none;
-    border-radius: 50%;
+  width: 45px;
+  border: none;
+  border-radius: 50%;
 }
 
 
@@ -636,14 +667,16 @@ input.input-box::placeholder {
   border: none;
   background-color: white;
 }
-.today-span{
+
+.today-span {
   background-color: white;
   border-radius: 5px;
   padding: 6px 8px;
   color: #54656f;
   font-size: 0.9rem;
 }
-.chat-initial{
+
+.chat-initial {
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -651,7 +684,8 @@ input.input-box::placeholder {
   gap: 10px;
   align-items: center;
 }
-.encryption-msg{
+
+.encryption-msg {
   background-color: #ffeecd;
   display: flex;
   border-radius: 5px;
@@ -660,7 +694,9 @@ input.input-box::placeholder {
   align-items: center;
   justify-content: center;
   padding: 5px;
+  margin: 0 10px;
 }
-.msgcontainer{
+
+.msgcontainer {
   font-size: 0.9rem;
 }
