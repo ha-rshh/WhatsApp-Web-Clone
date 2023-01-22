@@ -88,13 +88,13 @@ filter.addEventListener("click", () => {
   }
 })
 
-// User Status Page //
+// User About Page //
 
 profilePic.addEventListener("click", () => {
-  profileContainer.style.display = "block"
+  profileContainer.style.visibility = "visible"
 })
 profIcon.addEventListener("click", () => {
-  profileContainer.style.display = "none"
+  profileContainer.style.visibility = "hidden"
 })
 
 // Status Page Redirect //
@@ -168,3 +168,50 @@ ans.then((res)=>{
         
     }).join("")
 });
+
+
+
+// profile name edit js
+const pencil = document.querySelector(".NameChange");
+const profileUserName = document.querySelector(".profile-user_name");
+const userNameInput = document.querySelector(".username-input")
+const userName = document.getElementById("user-name");
+const profileNameInput = document.querySelector(".profile-user-input")
+const checkBtn = document.querySelector(".name-checkBtn")
+
+
+pencil.addEventListener("click", ()=>{
+profileUserName.style.display = "none"
+userNameInput.value = userName.innerText
+profileNameInput.style.display= "flex"
+
+
+
+})
+checkBtn.addEventListener("click", ()=>{
+  profileUserName.style.display = "flex"
+  userName.innerText = userNameInput.value
+  profileNameInput.style.display= "none"
+})
+
+
+// about edit js
+const aboutPencil = document.querySelector(".about-pencil");
+const aboutInfo = document.querySelector(".about-info");
+const aboutInput = document.querySelector(".about-input");
+const aboutInfoText = document.getElementById("about-info_text");
+const aboutNameInput = document.querySelector(".a-input")
+const aboutCheckBtn = document.querySelector(".about-checkBtn")
+
+
+aboutPencil.addEventListener("click", ()=>{
+  aboutInfo.style.display = "none"
+  aboutInput.style.display = "flex"
+  aboutNameInput.value = aboutInfoText.innerText
+
+})
+aboutCheckBtn.addEventListener("click", ()=>{
+  aboutInfo.style.display = "flex"
+  aboutInput.style.display = "none"
+  aboutInfoText.innerText=aboutNameInput.value 
+})
