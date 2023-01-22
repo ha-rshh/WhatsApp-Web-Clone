@@ -16,6 +16,7 @@ const chatPerson = document.querySelector(".right-chatbox")
 const chatpersonImg = document.querySelector(".person-img-details img")
 const chatPersonName = document.querySelector(".person-name")
 const menuBar = document.querySelector('#menu-icon');
+const chatBoxInput = document.querySelector('.chatbox-bottom')
 
 
 // Event Listner For MenuBar //
@@ -112,6 +113,7 @@ selectPerson.addEventListener("click", (e) => {
     if (ele.classList && ele.classList.contains('person')) {
       rightMost.style.display = "none";
       chatPerson.style.display = "block";
+      chatBoxInput.style.display = "flex"
       chatpersonImg.src = path[i].querySelector('img').src;
       chatPersonName.innerText = path[i].querySelector('#contact-name').innerText;
       return
