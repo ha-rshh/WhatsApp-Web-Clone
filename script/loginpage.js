@@ -13,6 +13,7 @@ const signupBtn = document.querySelector('#signup-btn');
 
 let users = JSON.parse(localStorage.getItem('users'));
 
+
 function checkUser(e){
     e.preventDefault();
   
@@ -63,14 +64,14 @@ let options = {
     method:'POST'
 };
 
-fetch("http://localhost:3000/login", options)
+fetch("https://whatsapp-api-login.onrender.com/login", options)
 .then((resolve)=>{
     return resolve.json();
 })
 .then((data) => {
     console.log(data)
     localStorage.setItem("loggedInUser", JSON.stringify(data));
-    //window.location.href = "index.html"
+    window.location.href = "index.html"
 })
 .catch((error)=>{
     alert(error);

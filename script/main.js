@@ -19,10 +19,17 @@ const menuBar = document.querySelector("#menu-icon");
 const chatBoxInput = document.querySelector(".chatbox-bottom");
 const userProfile = document.querySelector(".profile-img");
 
+if(!(localStorage.getItem("loggedInUser"))) {
+  window.location.href = "./loginpage.html"
+}
+const users = JSON.parse(localStorage.getItem("loggedInUser")) || {};
+
+
 // Event Listner For MenuBar //
 menuBar.addEventListener("click", () => {
   menuList.style.display = "block";
 });
+
 
 document.addEventListener("click", (event) => {
   if (!menuBar.contains(event.target) && !filter.contains(event.target)) {
@@ -63,7 +70,9 @@ menuList.addEventListener("click", (e) => {
   logout = e.target.innerText;
 
   if (logout == "Log out") {
+    localStorage.removeItem("loggedInUser")
     window.location.href = "./loginpage.html";
+
   }
 });
 
@@ -152,6 +161,8 @@ selectPerson.addEventListener("click", (e) => {
         path[i].querySelector("#contact-name").innerText;
         console.log(path[i].querySelector(".person-name-details").id)
       currentActiveUser = path[i].querySelector(".person-name-details").id;
+      console.log(currentActiveUser);
+      handleSingleUser(currentActiveUser, "first");
       return;
     }
   });
@@ -179,8 +190,8 @@ inputBox.addEventListener("keypress", myFunc);
 
 /* API Integration */
 
-let ans = fetch("http://localhost:3000/users");
-const users = JSON.parse(localStorage.getItem("loggedInUser"))
+let ans = fetch("https://whatsapp-api-login.onrender.com/users");
+
 // console.log(users.usersList)
 
 ans
@@ -192,7 +203,7 @@ ans
     document.getElementById("contact-list").innerHTML = result.usersList
       .map((ele) => {
         const dates = new Date(ele.date);
-        return `<li class="person" id="person" onclick="handleSingleUser(${ele.mobile})">
+        return `<li class="person" id="person">
         <div class="person-img-details">
           <img src="${ele.avatar}" alt="contact1"
             width="55px" height="55px" style="border-radius:50%;">
@@ -211,9 +222,18 @@ ans
       .join("");
   });
 
-function handleSingleUser(user) {
+
+
+const chatContainer = document.querySelector('.append-chat')
+
+function handleSingleUser(user, typee) {
   // Api call.
   // Chat recieve hogi.
+  if(typee === "first") {
+    chatContainer.innerHTML = "";
+  }
+  console.log(users);
+  console.log(user);
   let options = {
     body: JSON.stringify({
       to: user,
@@ -224,21 +244,44 @@ function handleSingleUser(user) {
     },
     method: "POST",
   };
-  fetch("http://localhost:3000/messages", options)
+
+  fetch("https://whatsapp-api-login.onrender.com/messages", options)
     .then((resolve) => {
       return resolve.json();
     })
     .then((data) => {
-      console.log(data);
-      //chats map karwayenge
+      // console.log(data.message);
+      chatContainer.innerHTML = "";
+      let chat = JSON.parse(data[0].message)
+      console.log(users);
+      
+      console.log(chat)
+      //x     chats map karwayenge
+      chat.map((ele)=>{
+        console.log(ele)
+        chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? 'send-chat' : 'recieve-chat'}">${ele.message}</div>`
+        // `<div class="recieve-chat">${ele}</div>`
+      })
+      chat.scrollBy(0,1000);
+      //window.scrollTop = document..scrollHeight
+     //window.scrollTo(0,document.body.scrollHeight);
     })
     .catch((error) => {
       console.log(error);
     });
 }
+//    <div class="recieve-chat"><span id="recieve-chat"></span></div>
+/* <div class="send-chat"><span id="sent-chat"></span></div> */
+
+
 // Message send and recieve
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
+
+
+setInterval(()=>{
+  handleSingleUser(currentActiveUser);
+}, 3000);
 
 sendBtn.addEventListener("click", function (e) {
   // Api call
@@ -259,13 +302,15 @@ sendBtn.addEventListener("click", function (e) {
     },
     method: "POST",
   };
-  fetch("http://localhost:3000/send", options)
+  fetch("https://whatsapp-api-login.onrender.com/send", options)
     .then((resolve) => {
       return resolve.json();
     })
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       //chats map karwayenge
+      handleSingleUser(currentActiveUser);
+      inputChat.value = "";
     })
     .catch((error) => {
       alert(error);

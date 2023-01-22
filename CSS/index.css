@@ -1,3 +1,6 @@
+:root{
+  --chatbgcolor: #d8fed8;
+}
 * {
   margin: 0;
   padding: 0;
@@ -608,6 +611,7 @@ input.input-box::placeholder {
 }
 
 #chatbox-input {
+
   width: 100%;
   border-radius: 5px;
   padding: 13px 20px;
@@ -615,8 +619,14 @@ input.input-box::placeholder {
   border: none;
   background-color: white;
 }
+.fixed{
+  top: 10px;
+  position: sticky;
+  z-index: 5998;
+}
 
 .today-span {
+
   background-color: white;
   border-radius: 5px;
   padding: 6px 8px;
@@ -625,6 +635,7 @@ input.input-box::placeholder {
 }
 
 .chat-initial {
+  position: relative;
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -650,3 +661,26 @@ input.input-box::placeholder {
 }
 
 /* x    css for chat   */
+.chat{
+  position: relative;
+  overflow-x: scroll;
+  padding: 1rem  4rem;
+}
+.recieve-chat, .send-chat{
+  height: min-content ;
+  width: fit-content;
+  display: block;
+  background-color: var(--chatbgcolor);
+  margin: 5px 10px; 
+  padding: 8px 10px;
+  border-radius: 5px;
+  color: #111b21;
+}
+.send-chat{
+  float: right;
+  clear: both;
+}
+.recieve-chat{
+  clear: both;
+  background-color: rgb(196, 196, 196);
+}
