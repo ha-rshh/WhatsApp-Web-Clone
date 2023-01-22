@@ -85,7 +85,7 @@ function createUser(e) {
     
   let options = {
     body:JSON.stringify({
-      user:userNameEl.value,  
+      email:userNameEl.value,  
       mobile : mobileNum.value,
       pass : passwordEl.value,
       date:String(currentDate),
@@ -98,10 +98,10 @@ function createUser(e) {
     method:'POST'
   };
 
-  fetch("http://localhost:3000", options)
+  fetch("http://localhost:3000/", options)
    .then((resolve) => {
     localStorage.setItem("loggedInUser", JSON.stringify(resolve.data));
-    window.location.href = "index.html"
+    //window.location.href = "index.html"
   })
   .catch((error)=>{
     alert(error);

@@ -69,8 +69,8 @@ fetch("http://localhost:3000/login", options)
 })
 .then((data) => {
     console.log(data)
-    localStorage.setItem("loggedInUser", JSON.stringify(data.data.user));
-    window.location.href = "index.html"
+    localStorage.setItem("loggedInUser", JSON.stringify(data));
+    //window.location.href = "index.html"
 })
 .catch((error)=>{
     alert(error);
