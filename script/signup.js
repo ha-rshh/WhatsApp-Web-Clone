@@ -7,6 +7,7 @@ const loginBtn = document.querySelector("#login-btn");
 const mobileNumAlert = document.querySelector("#mobile-alert");
 const alertDiv = document.querySelector(".alert");
 let users = JSON.parse(localStorage.getItem("users"));
+var image = "";
 
 if (!users) users = [];
 
@@ -42,6 +43,12 @@ function createUser(e) {
     setTimeout(() => {
       alertDiv.style.cssText = "transition:1s; display: none";
     }, 2000);
+  } else if (image == "") {
+    alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E ";
+    mobileNumAlert.innerText = "Please upload Image";
+    setTimeout(() => {
+      alertDiv.style.cssText = "transition:1s; display: none";
+    }, 2000);
   } else if (passwordEl.value != ConfirmPasswordEl.value) {
     alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E ";
     mobileNumAlert.innerText = "Password does not match";
@@ -49,11 +56,30 @@ function createUser(e) {
       alertDiv.style.cssText = "transition:1s; display: none";
     }, 2000);
   } else {
-    for (let i = 0; i < users.length; i++) {
-      if (
-        user.username === users[i].username ||
-        user.mobile === users[i].mobile
-      ) {
+    let currentDate = new Date();
+    const id = "id" + performance.now();
+    const options = {
+      body: JSON.stringify({
+        user: userNameEl.value,
+        mobile: mobileNum.value,
+        pass: passwordEl.value,
+        date: String(currentDate),
+        id,
+        avatar: image,
+      }),
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
+    fetch("http://localhost:3000", options)
+      .then((res) => {
+        console.log(res);
+        localStorage.setItem("loggedInUser", JSON.stringify(res.data));
+        window.location.href = "index.html";
+      })
+      .catch((err) => {
+        console.log(err);
         userFound = true;
         mobileNumAlert.style.cssText = "transition : 0.8s;";
         mobileNumAlert.innerText = "User already exist";
@@ -61,19 +87,7 @@ function createUser(e) {
           mobileNumAlert.style.cssText = "transition : 0.8s;";
           mobileNumAlert.innerText = "Please Log in";
         }, 1000);
-        break;
-      }
-    }
-    if (!userFound) {
-      users.push(user);
-    } else {
-      alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E";
-      mobileNumAlert.innerText = "User already exist";
-      setTimeout(() => {
-        alertDiv.style.cssText = "transition:1s; display: none";
-      }, 2000);
-    }
-    localStorage.setItem("users", JSON.stringify(users));
+      });
     reset();
   }
 }
@@ -84,6 +98,10 @@ function reset() {
   passwordEl.value = "";
   ConfirmPasswordEl.value = "";
 }
+
+var loadFile = function (event) {
+  image = URL.createObjectURL(event.target.files[0]);
+};
 
 submitBtn.addEventListener("click", createUser);
 loginBtn.addEventListener("click", () => {
