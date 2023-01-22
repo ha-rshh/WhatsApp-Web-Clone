@@ -49,7 +49,7 @@
           <div class="icon-box">
             <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="message"
               version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
-              <path fill="currentColor" enable-background="new    "
+              <path fill="#8696a0" enable-background="new    "
                 d="M19.005,3.175H4.674C3.642,3.175,3,3.789,3,4.821V21.02 l3.544-3.514h12.461c1.033,0,2.064-1.06,2.064-2.093V4.821C21.068,3.789,20.037,3.175,19.005,3.175z M14.016,13.044H7.041V11.1 h6.975V13.044z M17.016,9.044H7.041V7.1h9.975V9.044z">
               </path>
             </svg>
@@ -65,16 +65,12 @@
             </svg>
           </div>
 
-
           <!-- menu list -->
-
-
         </div>
       </div>
 
       <!-- search Box -->
       <div class="search">
-
         <div class="search-container">
           <div class="search-box">
             <div><input class="input-box" type="text" placeholder="Search or start new chat"></div>
@@ -88,7 +84,7 @@
           <div class="filter">
             <svg viewBox="0 0 24 24" fill="54656f" height="20" width="20" preserveAspectRatio="xMidYMid meet" class=""
               version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
-              <path fill="currentColor" d="M10,18.1h4v-2h-4V18.1z M3,6.1v2h18v-2H3z M6,13.1h12v-2H6V13.1z"></path>
+              <path fill="#8696a0" d="M10,18.1h4v-2h-4V18.1z M3,6.1v2h18v-2H3z M6,13.1h12v-2H6V13.1z"></path>
             </svg>
 
           </div>
@@ -146,8 +142,25 @@
         <div class="profile-name">
           <p class="name">Your name</p>
           <div class="profile-user_name">
-            <p>Aircampus July Batch </p>
-            <p class="edit"><i class="bi bi-pencil-fill"></i></p>
+            <p id="user-name">Aircampus July Batch </p>
+            <p class="edit">
+              <span data-testid="pencil" data-icon="pencil" class="_2wqji"><svg viewBox="0 0 24 24" height="24"
+                  width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px"
+                  enable-background="new 0 0 24 24" xml:space="preserve">
+                  <path fill="currentColor"
+                    d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z">
+                  </path>
+                </svg></span>
+            </p>
+          </div>
+          <div class="profile-user-input">
+            <div class="name-input">
+            <input type="text" class="username-input" maxlength="16">
+            </div>
+            <div class="name-checkBtn">
+              <span data-testid="emoji-input" data-icon="emoji-input" class="_2wqji"><svg viewBox="0 0 20 20" height="20" width="20" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 20 20" xml:space="preserve"><path fill="#8696a0" d="M9.5,1.7C4.8,1.7,1,5.5,1,10.2s3.8,8.5,8.5,8.5s8.5-3.8,8.5-8.5S14.2,1.7,9.5,1.7z  M9.5,17.6c-4.1,0-7.4-3.3-7.4-7.4s3.3-7.4,7.4-7.4s7.4,3.3,7.4,7.4S13.6,17.6,9.5,17.6z"></path><path fill="#8696a0" d="M6.8,9.8C7.5,9.7,8,9.1,7.9,8.4C7.8,7.8,7.4,7.3,6.8,7.3C6.1,7.3,5.6,8,5.7,8.7 C5.7,9.3,6.2,9.7,6.8,9.8z"></path><path fill="#8696a0" d="M13.9,11.6c-1.4,0.2-2.9,0.3-4.4,0.4c-1.5,0-2.9-0.1-4.4-0.4c-0.2,0-0.4,0.1-0.4,0.3 c0,0.1,0,0.2,0,0.2c0.9,1.8,2.7,2.9,4.7,3c2-0.1,3.8-1.2,4.8-3c0.1-0.2,0-0.4-0.1-0.5C14.1,11.6,14,11.6,13.9,11.6z M9.8,13.6 c-2.3,0-3.5-0.8-3.7-1.4c2.3,0.4,4.6,0.4,6.9,0C13,12.3,12.6,13.6,9.8,13.6L9.8,13.6z"></path><path fill="#8696a0" d="M12.2,9.8c0.7-0.1,1.2-0.7,1.1-1.4c-0.1-0.6-0.5-1.1-1.1-1.1c-0.7,0-1.2,0.7-1.1,1.4 C11.2,9.3,11.6,9.7,12.2,9.8z"></path></svg></span>
+              <span data-testid="checkmark" data-icon="checkmark" class="checkBtn"><svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="#8696a0" d="M9,17.2l-4-4l-1.4,1.3L9,19.9L20.4,8.5L19,7.1L9,17.2z"></path></svg></span>
+            </div>
           </div>
         </div>
 
@@ -159,13 +172,29 @@
 
         <div class="about">
           <p class="about-para">About</p>
+          
           <div class="about-info">
-            <p>SDE</p>
-            <p><i class="bi bi-pencil-fill"></i></p>
+            <p id="about-info_text">SDE</p>
+            <p><span data-testid="pencil" data-icon="pencil" class="about-pencil"><svg viewBox="0 0 24 24" height="24"
+                  width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px"
+                  enable-background="new 0 0 24 24" xml:space="preserve">
+                  <path fill="currentColor"
+                    d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z">
+                  </path>
+                </svg></span></p>
+          
+          </div>
+          <div class="about-input">
+            <div class="about-text">
+              <input type="text" class="-input" maxlength="16">
+              </div>
+              <div class="about-checkBtn">
+                <span data-testid="emoji-input" data-icon="emoji-input" class="about-checkBtn"><svg viewBox="0 0 20 20" height="20" width="20" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 20 20" xml:space="preserve"><path fill="#8696a0" d="M9.5,1.7C4.8,1.7,1,5.5,1,10.2s3.8,8.5,8.5,8.5s8.5-3.8,8.5-8.5S14.2,1.7,9.5,1.7z  M9.5,17.6c-4.1,0-7.4-3.3-7.4-7.4s3.3-7.4,7.4-7.4s7.4,3.3,7.4,7.4S13.6,17.6,9.5,17.6z"></path><path fill="#8696a0" d="M6.8,9.8C7.5,9.7,8,9.1,7.9,8.4C7.8,7.8,7.4,7.3,6.8,7.3C6.1,7.3,5.6,8,5.7,8.7 C5.7,9.3,6.2,9.7,6.8,9.8z"></path><path fill="#8696a0" d="M13.9,11.6c-1.4,0.2-2.9,0.3-4.4,0.4c-1.5,0-2.9-0.1-4.4-0.4c-0.2,0-0.4,0.1-0.4,0.3 c0,0.1,0,0.2,0,0.2c0.9,1.8,2.7,2.9,4.7,3c2-0.1,3.8-1.2,4.8-3c0.1-0.2,0-0.4-0.1-0.5C14.1,11.6,14,11.6,13.9,11.6z M9.8,13.6 c-2.3,0-3.5-0.8-3.7-1.4c2.3,0.4,4.6,0.4,6.9,0C13,12.3,12.6,13.6,9.8,13.6L9.8,13.6z"></path><path fill="#8696a0" d="M12.2,9.8c0.7-0.1,1.2-0.7,1.1-1.4c-0.1-0.6-0.5-1.1-1.1-1.1c-0.7,0-1.2,0.7-1.1,1.4 C11.2,9.3,11.6,9.7,12.2,9.8z"></path></svg></span>
+                <span data-testid="checkmark" data-icon="checkmark" class="_2wqji"><svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve"><path fill="#8696a0" d="M9,17.2l-4-4l-1.4,1.3L9,19.9L20.4,8.5L19,7.1L9,17.2z"></path></svg></span>
+              </div>
           </div>
 
         </div>
-
       </div>
 
 
@@ -173,8 +202,8 @@
 
       <!-- Here start contact person list-->
 
-      <div id="contact-list">
-        <ul>
+      <div class="contact-container">
+        <ul id="contact-list">
 
           <!--<li class="person" id="person">
             <div class="person-img-details">
@@ -280,15 +309,14 @@
       <!--Default Chat-box -->
 
       <div class="right-chatbox">
-
-        <div class="chatbox-head">
-
+        <div class="bg">
+        <header class="chatbox-head">
           <!--Default Chat-box -->
           <div class="contact">
             <div class="person-img-details">
               <img src="" alt="" />
             </div>
-            <div class="person-name"></div>
+            <div class="person-name current-chat"></div>
           </div>
 
           <div class="option">
@@ -309,15 +337,34 @@
               </svg>
             </div>
           </div>
-
-        </div>
-
-        <!-- Fix Part-->
+        </header>
         <div class="chat">
-
+          <div class="chat-initial">
+            <div class="">
+              <div class="today-span"><span>TODAY</span></div>
+            </div>
+            <div class="encryption-msg">
+                <div class="lock-svg">
+                  <svg viewBox="0 0 10 12" height="12" width="10" preserveAspectRatio="xMidYMid meet" class=""
+                  version="1.1">
+                  <path
+                    d="M5.00847986,1.6 C6.38255462,1.6 7.50937014,2.67435859 7.5940156,4.02703389 L7.59911976,4.1906399 L7.599,5.462 L7.75719976,5.46214385 C8.34167974,5.46214385 8.81591972,5.94158383 8.81591972,6.53126381 L8.81591972,9.8834238 C8.81591972,10.4731038 8.34167974,10.9525438 7.75719976,10.9525438 L2.25767996,10.9525438 C1.67527998,10.9525438 1.2,10.4731038 1.2,9.8834238 L1.2,6.53126381 C1.2,5.94158383 1.67423998,5.46214385 2.25767996,5.46214385 L2.416,5.462 L2.41679995,4.1906399 C2.41679995,2.81636129 3.49135449,1.68973395 4.84478101,1.60510326 L5.00847986,1.6 Z M5.00847986,2.84799995 C4.31163824,2.84799995 3.73624912,3.38200845 3.6709675,4.06160439 L3.6647999,4.1906399 L3.663,5.462 L6.35,5.462 L6.35111981,4.1906399 C6.35111981,3.53817142 5.88169076,2.99180999 5.26310845,2.87228506 L5.13749818,2.85416626 L5.00847986,2.84799995 Z"
+                    fill="currentColor"></path>
+                </svg>
+                </div>
+              <div class="msgcontainer">
+                <span dir="ltr" aria-label="" class="_11JPr">Messages are end-to-end
+                  encrypted. No one outside of this chat, not even WhatsApp, can read or listen to them. Click
+                  to learn more.
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="chatbox-bottom">
+      </div>
+      </div>
+      <div class="chatbox-bottom">
+        <div class="emoji-attach">
           <div class="emogy">
             <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
               class="ekdr8vow dhq51u3o" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24"
@@ -335,22 +382,25 @@
               </path>
             </svg>
           </div>
-          <div class="input">
-            <input type="text" name="chat" id="chatbox-input" placeholder="Type a Message">
-          </div>
-          <div class="mike">
-            <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1"
-              x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
-              <path fill="currentColor"
-                d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z">
-              </path>
-            </svg>
-          </div>
-
+        </div>
+        <div class="input">
+          <input type="text" name="chat" id="chatbox-input" placeholder="Type a Message">
+        </div>
+        <span class="send-btn"><svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet"
+            class="" version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+            <path fill="currentColor"
+              d="M1.101,21.757L23.8,12.028L1.101,2.3l0.011,7.912l13.623,1.816L1.112,13.845 L1.101,21.757z"></path>
+          </svg></span>
+        <div class="mike">
+          <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1"
+            x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+            <path fill="currentColor"
+              d="M11.999,14.942c2.001,0,3.531-1.53,3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531 S8.469,2.35,8.469,4.35v7.061C8.469,13.412,9.999,14.942,11.999,14.942z M18.237,11.412c0,3.531-2.942,6.002-6.237,6.002 s-6.237-2.471-6.237-6.002H3.761c0,4.001,3.178,7.297,7.061,7.885v3.884h2.354v-3.884c3.884-0.588,7.061-3.884,7.061-7.885 L18.237,11.412z">
+            </path>
+          </svg>
         </div>
       </div>
-
-
+    </div>
     </div>
   </main>
   <script src="./script/main.js"></script>
