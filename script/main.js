@@ -19,17 +19,15 @@ const menuBar = document.querySelector("#menu-icon");
 const chatBoxInput = document.querySelector(".chatbox-bottom");
 const userProfile = document.querySelector(".profile-img");
 
-if(!(localStorage.getItem("loggedInUser"))) {
-  window.location.href = "./loginpage.html"
+if (!localStorage.getItem("loggedInUser")) {
+  window.location.href = "./loginpage.html";
 }
 const users = JSON.parse(localStorage.getItem("loggedInUser")) || {};
-
 
 // Event Listner For MenuBar //
 menuBar.addEventListener("click", () => {
   menuList.style.display = "block";
 });
-
 
 document.addEventListener("click", (event) => {
   if (!menuBar.contains(event.target) && !filter.contains(event.target)) {
@@ -70,9 +68,8 @@ menuList.addEventListener("click", (e) => {
   logout = e.target.innerText;
 
   if (logout == "Log out") {
-    localStorage.removeItem("loggedInUser")
+    localStorage.removeItem("loggedInUser");
     window.location.href = "./loginpage.html";
-
   }
 });
 
@@ -159,7 +156,7 @@ selectPerson.addEventListener("click", (e) => {
       chatpersonImg.src = path[i].querySelector("img").src;
       chatPersonName.innerText =
         path[i].querySelector("#contact-name").innerText;
-        console.log(path[i].querySelector(".person-name-details").id)
+      console.log(path[i].querySelector(".person-name-details").id);
       currentActiveUser = path[i].querySelector(".person-name-details").id;
       console.log(currentActiveUser);
       handleSingleUser(currentActiveUser, "first");
@@ -189,18 +186,40 @@ function myFunc(event) {
 inputBox.addEventListener("keypress", myFunc);
 
 /* API Integration */
-
 let ans = fetch("https://whatsapp-api-login.onrender.com/users");
-
 // console.log(users.usersList)
-
 ans
   .then((res) => {
     return res.json();
   })
   .then((result) => {
     console.log(result);
-    document.getElementById("contact-list").innerHTML = result.usersList
+    let contacts = result.usersList.filter(
+      (elem) => elem.email != users.user.email
+    );
+    const time = new Date(users.user.date);
+
+    document.getElementById(
+      "contact-list"
+    ).innerHTML = `<li class="person" id="person">
+                                                          <div class="person-img-details">
+                                                            <img src="${
+                                                              users.user.avatar
+                                                            }" alt="contact1"
+                                                              width="55px" height="55px" style="border-radius:50%;">
+                                                          </div>
+                                                          <div class="person-name">
+                                                            <div class="person-name-details" id="${
+                                                              users.user.mobile
+                                                            }">
+                                                              <div class="contact-name" id="contact-name">${
+                                                                users.user.email
+                                                              } (You)</div>
+                                                              <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
+                                                            </div>
+                                                          </div>
+                                                        </li>`;
+    document.getElementById("contact-list").innerHTML += contacts
       .map((ele) => {
         const dates = new Date(ele.date);
         return `<li class="person" id="person">
@@ -210,7 +229,9 @@ ans
         </div>
         <div class="person-name">
           <div class="person-name-details" id="${ele.mobile}">
-            <div class="contact-name" id="contact-name">${ele.email === users.user.email ? `${ele.email} (You)` : ele.email}</div>
+            <div class="contact-name" id="contact-name">${
+              ele.email === users.user.email ? `${ele.email} (You)` : ele.email
+            }</div>
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
           </div>
           <div class="person-msg">
@@ -222,14 +243,12 @@ ans
       .join("");
   });
 
-
-
-const chatContainer = document.querySelector('.append-chat')
+const chatContainer = document.querySelector(".append-chat");
 
 function handleSingleUser(user, typee) {
   // Api call.
   // Chat recieve hogi.
-  if(typee === "first") {
+  if (typee === "first") {
     chatContainer.innerHTML = "";
   }
   console.log(users);
@@ -252,19 +271,21 @@ function handleSingleUser(user, typee) {
     .then((data) => {
       // console.log(data.message);
       chatContainer.innerHTML = "";
-      let chat = JSON.parse(data[0].message)
+      let chat = JSON.parse(data[0].message);
       console.log(users);
-      
-      console.log(chat)
+
+      console.log(chat);
       //x     chats map karwayenge
-      chat.map((ele)=>{
-        console.log(ele)
-        chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? 'send-chat' : 'recieve-chat'}">${ele.message}</div>`
+      chat.map((ele) => {
+        console.log(ele);
+        chatContainer.innerHTML += `<div class="${
+          users.user.mobile === ele.from ? "send-chat" : "recieve-chat"
+        }">${ele.message}</div>`;
         // `<div class="recieve-chat">${ele}</div>`
-      })
-      chat.scrollBy(0,1000);
+      });
+      chat.scrollBy(0, 1000);
       //window.scrollTop = document..scrollHeight
-     //window.scrollTo(0,document.body.scrollHeight);
+      //window.scrollTo(0,document.body.scrollHeight);
     })
     .catch((error) => {
       console.log(error);
@@ -273,13 +294,11 @@ function handleSingleUser(user, typee) {
 //    <div class="recieve-chat"><span id="recieve-chat"></span></div>
 /* <div class="send-chat"><span id="sent-chat"></span></div> */
 
-
 // Message send and recieve
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
 
-
-setInterval(()=>{
+setInterval(() => {
   handleSingleUser(currentActiveUser);
 }, 3000);
 
