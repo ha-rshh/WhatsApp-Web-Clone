@@ -19,12 +19,15 @@ const menuBar = document.querySelector("#menu-icon");
 const chatBoxInput = document.querySelector(".chatbox-bottom");
 const userProfile = document.querySelector(".profile-img");
 
+// x clearing userData after logout
+
 if (!localStorage.getItem("loggedInUser")) {
   window.location.href = "./loginpage.html";
 }
 const users = JSON.parse(localStorage.getItem("loggedInUser")) || {};
 
-// Event Listner For MenuBar //
+//x      Event Listner For MenuBar
+
 menuBar.addEventListener("click", () => {
   menuList.style.display = "block";
 });
@@ -36,14 +39,14 @@ document.addEventListener("click", (event) => {
   }
 });
 
-// Add Arrow to Search-box //
+//x Add Arrow to Search-box
 
 inputBox.addEventListener("click", () => {
   searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`;
   searchIcon.style.color = "#009688";
 });
 
-// Click on Arrow //
+//x Click on Arrow
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("bi")) {
@@ -61,7 +64,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Redirect page on login when click on logout //
+//x Redirect page on login when click on logout
 
 let logout = "";
 menuList.addEventListener("click", (e) => {
@@ -73,7 +76,7 @@ menuList.addEventListener("click", (e) => {
   }
 });
 
-// Filter Function //
+//x Filter Function
 
 filter.addEventListener("click", () => {
   filterMsg.innerHTML = `<div>
@@ -88,19 +91,19 @@ filter.addEventListener("click", () => {
   } else {
     contactList.style.display = "none";
     filter.style.color = "white";
-    filter.style.background = "#00a884";
+    filter.style.background = "#F0F2F5";
   }
 });
 
-// User About Page //
-
+//x User About Page section
 profilePic.addEventListener("click", () => {
   profileContainer.style.visibility = "visible";
 });
 profIcon.addEventListener("click", () => {
   profileContainer.style.visibility = "hidden";
 });
-// profile name edit js
+
+//x profile name edit js
 const pencil = document.querySelector(".NameChange");
 const profileUserName = document.querySelector(".profile-user_name");
 const userNameInput = document.querySelector(".username-input");
@@ -118,7 +121,7 @@ checkBtn.addEventListener("click", () => {
   userName.innerText = userNameInput.value;
   profileNameInput.style.display = "none";
 });
-// about edit js
+//x  about edit js
 const aboutPencil = document.querySelector(".about-pencil");
 const aboutInfo = document.querySelector(".about-info");
 const aboutInput = document.querySelector(".about-input");
@@ -137,17 +140,17 @@ aboutCheckBtn.addEventListener("click", () => {
   aboutInfoText.innerText = aboutNameInput.value;
 });
 
-// Status Page Redirect //
+//x Status Page Redirect //
 
 statusIcon.addEventListener("click", () => {
   window.location.href = "statuspage.html";
 });
 
-// Contact-List Person Chat-Box //
-let currentActiveUser = ""
+//x  Contact-List Person Chat-Box //
+
+let currentActiveUser = "";
 selectPerson.addEventListener("click", (e) => {
   var path = e.path || (e.composedPath && e.composedPath());
-
   path.forEach((ele, i) => {
     if (ele.classList && ele.classList.contains("person")) {
       rightMost.style.display = "none";
@@ -165,7 +168,7 @@ selectPerson.addEventListener("click", (e) => {
   });
 });
 
-// Search By Name //
+//x  Search By Name
 
 const li = document.getElementsByClassName("person");
 
@@ -183,17 +186,18 @@ function myFunc(event) {
     }
   }
 }
+
 inputBox.addEventListener("keypress", myFunc);
 
 /* API Integration */
 let ans = fetch("https://whatsapp-api-login.onrender.com/users");
-// console.log(users.usersList)
+//! console.log(users.usersList)
 ans
   .then((res) => {
     return res.json();
   })
   .then((result) => {
-    console.log(result);
+    //! console.log(result);
     let contacts = result.usersList.filter(
       (elem) => elem.email != users.user.email
     );
@@ -203,18 +207,11 @@ ans
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
                   <div class="person-img-details">
-                    <img src="${
-                      users.user.avatar
-                    }" alt="contact1"
-                      width="55px" height="55px" style="border-radius:50%;">
+                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%;">
                   </div>
                   <div class="person-name">
-                    <div class="person-name-details" id="${
-                      users.user.mobile
-                    }">
-                      <div class="contact-name" id="contact-name">${
-                        users.user.email
-                      } (You)</div>
+                    <div class="person-name-details" id="${users.user.mobile}">
+                      <div class="contact-name" id="contact-name">${users.user.email} (You)</div>
                       <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
                     </div>
                   </div>
@@ -243,15 +240,14 @@ ans
   });
 
 const chatContainer = document.querySelector(".append-chat");
-
 function handleSingleUser(user, typee) {
   // Api call.
   // Chat recieve hogi.
   if (typee === "first") {
     chatContainer.innerHTML = "";
   }
-  console.log(users);
-  console.log(user);
+  //! console.log(users);
+  //! console.log(user);
   let options = {
     body: JSON.stringify({
       to: user,
@@ -271,20 +267,15 @@ function handleSingleUser(user, typee) {
       // console.log(data.message);
       chatContainer.innerHTML = "";
       let chat = JSON.parse(data[0].message);
-      console.log(users);
-
-      console.log(chat);
-      //x     chats map karwayenge
+      //! console.log(users);
+       console.log(chat);
       chat.map((ele) => {
         console.log(ele);
-        chatContainer.innerHTML += `<div class="${
-          users.user.mobile === ele.from ? "send-chat" : "recieve-chat"
-        }">${ele.message}</div>`;
-        // `<div class="recieve-chat">${ele}</div>`
+        chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
+        <span class="chat-time"> </span>`
+        
       });
-      chat.scrollBy(0, 1000);
-      //window.scrollTop = document..scrollHeight
-      //window.scrollTo(0,document.body.scrollHeight);
+      // chat.scrollBy(0, 1000);
     })
     .catch((error) => {
       console.log(error);
@@ -293,46 +284,46 @@ function handleSingleUser(user, typee) {
 //    <div class="recieve-chat"><span id="recieve-chat"></span></div>
 /* <div class="send-chat"><span id="sent-chat"></span></div> */
 
-// Message send and recieve
+//x   Message send and recieve
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
 
 setInterval(() => {
   handleSingleUser(currentActiveUser);
-}, 3000);
+}, 5000);
 
 sendBtn.addEventListener("click", function (e) {
   // Api call
   // message
-  let currentDate = new Date();
-  let options = {
-    body: JSON.stringify({
-      to: currentActiveUser,
-      from: users.user.mobile,
-      message: {
-        message: inputChat.value,
-        date: currentDate,
+  if (inputChat.value != "") {
+    let currentDate = new Date();
+    let options = {
+      body: JSON.stringify({
+        to: currentActiveUser,
         from: users.user.mobile,
+        message: {
+          message: inputChat.value,
+          date: currentDate,
+          from: users.user.mobile,
+        },
+      }),
+      headers: {
+        "content-type": "application/json",
       },
-    }),
-    headers: {
-      "content-type": "application/json",
-    },
-    method: "POST",
-  };
-  fetch("https://whatsapp-api-login.onrender.com/send", options)
-    .then((resolve) => {
-      return resolve.json();
-    })
-    .then((data) => {
-      // console.log(data);
-      //chats map karwayenge
-      handleSingleUser(currentActiveUser);
-      inputChat.value = "";
-    })
-    .catch((error) => {
-      alert(error);
-    });
+      method: "POST",
+    };
+    fetch("https://whatsapp-api-login.onrender.com/send", options)
+      .then((resolve) => {
+        return resolve.json();
+      })
+      .then((data) => {
+        //! console.log(data);
+        //! chats map karwayenge
+        handleSingleUser(currentActiveUser);
+        inputChat.value = "";
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  }
 });
-
-// "[{"message":"Hi","date":"2023-01-22T12:02:21.899Z","from":"9336103597"},{"message":"Hello","date":"2023-01-22T12:02:48.606Z","from":"8768768768"}]"

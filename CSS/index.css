@@ -409,15 +409,18 @@ input.input-box::placeholder {
 }
 
 #contact-list {
-
   overflow-y: scroll;
   height: 100%;
+  width: 100%;
 }
 
 .person {
   display: flex;
   gap: 15px;
-  height: 4.5rem;
+  /* height: 4.5rem; */
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.159) ;
+
 }
 
 .person:hover {
@@ -436,15 +439,15 @@ input.input-box::placeholder {
 
 .person-name {
   width: calc(100% - 15%);
-  height: 100%;
   display: flex;
-  justify-items: center;
+  position: relative;
+  bottom: 5px;
   flex-direction: column;
+  height: 100%;
 }
 
 .current-chat {
   position: relative;
-  /* bottom: 8px; */
   margin-left: 5px;
   font-size: 1.2rem;
 }
@@ -463,10 +466,10 @@ input.input-box::placeholder {
 .contact-name {
   position: relative;
   top: 5px;
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   color: #111b21;
   font-weight: 400;
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; 
   text-shadow: 0px 0px 10px rgba(85, 85, 85, 0.081);
 
 }
@@ -484,7 +487,9 @@ input.input-box::placeholder {
   font-size: 0.9rem;
   color: #667781;
 }
-
+.chat-time{
+  font-size: 0.8rem;
+}
 .right-most-container {
   height: 100%;
   width: 100%;
@@ -669,12 +674,15 @@ input.input-box::placeholder {
 .recieve-chat, .send-chat{
   height: min-content ;
   width: fit-content;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   background-color: var(--chatbgcolor);
   margin: 5px 10px; 
-  padding: 8px 10px;
-  border-radius: 5px;
+  padding: 7px 10px;
+  border-radius: 8px;
   color: #111b21;
+  box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 3px;
 }
 .send-chat{
   float: right;
@@ -682,5 +690,5 @@ input.input-box::placeholder {
 }
 .recieve-chat{
   clear: both;
-  background-color: rgb(196, 196, 196);
+  background-color: rgb(255, 255, 255);
 }
