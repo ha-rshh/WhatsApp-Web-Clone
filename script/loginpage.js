@@ -26,14 +26,15 @@ function checkUser(e) {
       return resolve.json();
     })
     .then((data) => {
-      console.log(data);
+    //   console.log(data);
       localStorage.setItem("loggedInUser", JSON.stringify(data));
       window.location.href = "index.html";
     })
     .catch((error) => {
       alert(error);
-      alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E ";
-      mobileNumAlert.innerText = "Your username and/ or password do not match";
+    //   mobileNumAlert.innerText = "This account does not exist";
+    //   alertDiv.style.cssText = "transition: 1s; background-color: #FF1E1E ";
+    //   mobileNumAlert.innerText = "Your username and/ or password do not match";
       setTimeout(() => {
         alertDiv.style.cssText = "transition:1s; display: none";
       }, 2000);

@@ -202,23 +202,23 @@ ans
     document.getElementById(
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
-                                                          <div class="person-img-details">
-                                                            <img src="${
-                                                              users.user.avatar
-                                                            }" alt="contact1"
-                                                              width="55px" height="55px" style="border-radius:50%;">
-                                                          </div>
-                                                          <div class="person-name">
-                                                            <div class="person-name-details" id="${
-                                                              users.user.mobile
-                                                            }">
-                                                              <div class="contact-name" id="contact-name">${
-                                                                users.user.email
-                                                              } (You)</div>
-                                                              <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
-                                                            </div>
-                                                          </div>
-                                                        </li>`;
+                  <div class="person-img-details">
+                    <img src="${
+                      users.user.avatar
+                    }" alt="contact1"
+                      width="55px" height="55px" style="border-radius:50%;">
+                  </div>
+                  <div class="person-name">
+                    <div class="person-name-details" id="${
+                      users.user.mobile
+                    }">
+                      <div class="contact-name" id="contact-name">${
+                        users.user.email
+                      } (You)</div>
+                      <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
+                    </div>
+                  </div>
+                </li>`;
     document.getElementById("contact-list").innerHTML += contacts
       .map((ele) => {
         const dates = new Date(ele.date);
@@ -235,7 +235,6 @@ ans
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
           </div>
           <div class="person-msg">
-            Hello ! what's up everyone
           </div>
         </div>
       </li>`;
