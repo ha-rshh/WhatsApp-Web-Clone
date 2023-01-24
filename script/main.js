@@ -295,7 +295,7 @@ setInterval(() => {
 sendBtn.addEventListener("click", function (e) {
   // Api call
   // message
-  if (inputChat.value != "") {
+  if (inputChat.value != "" && inputChat.value != " ") {
     let currentDate = new Date();
     let options = {
       body: JSON.stringify({
