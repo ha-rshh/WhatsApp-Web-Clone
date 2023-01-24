@@ -197,25 +197,25 @@ ans
     return res.json();
   })
   .then((result) => {
-    //! console.log(result);
     let contacts = result.usersList.filter(
       (elem) => elem.email != users.user.email
     );
     const time = new Date(users.user.date);
-
+    document.getElementById('user-name').innerText = users.user.email;
     document.getElementById(
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
                   <div class="person-img-details">
-                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%;">
+                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%; object-fit: cover">
                   </div>
                   <div class="person-name">
                     <div class="person-name-details" id="${users.user.mobile}">
                       <div class="contact-name" id="contact-name">${users.user.email} (You)</div>
-                      <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
+                      <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()<10 ? "0" + time.getMinutes():time.getMinutes()}</div>
                     </div>
                   </div>
                 </li>`;
+
     document.getElementById("contact-list").innerHTML += contacts
       .map((ele) => {
         const dates = new Date(ele.date);
@@ -231,8 +231,7 @@ ans
             }</div>
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
           </div>
-          <div class="person-msg">
-          </div>
+          <div class="person-msg"></div>
         </div>
       </li>`;
       })
@@ -269,61 +268,79 @@ function handleSingleUser(user, typee) {
       let chat = JSON.parse(data[0].message);
       //! console.log(users);
        console.log(chat);
-      chat.map((ele) => {
+      chat.map((ele, index) => {
         console.log(ele);
-        chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
-        <span class="chat-time"> </span>`
-        
+        let date = new Date(ele.date);
+          chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
+          <div class="chat-time"> ${date.getHours()}:${date.getMinutes()}</div>` 
       });
       // chat.scrollBy(0, 1000);
+
     })
     .catch((error) => {
       console.log(error);
     });
 }
-//    <div class="recieve-chat"><span id="recieve-chat"></span></div>
-/* <div class="send-chat"><span id="sent-chat"></span></div> */
+
+
+
 
 //x   Message send and recieve
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
 
-setInterval(() => {
-  handleSingleUser(currentActiveUser);
-}, 5000);
+  // setInterval(() => {
+  //   handleSingleUser(currentActiveUser);
+  
+  // }, 5000);
 
-sendBtn.addEventListener("click", function (e) {
-  // Api call
-  // message
-  if (inputChat.value != "" && inputChat.value != " ") {
-    let currentDate = new Date();
-    let options = {
-      body: JSON.stringify({
-        to: currentActiveUser,
-        from: users.user.mobile,
-        message: {
-          message: inputChat.value,
-          date: currentDate,
+
+//x Submit chat on keypress Enter
+
+function submitChat(){
+    if (inputChat.value != "" && inputChat.value != " ") {
+      let currentDate = new Date();
+      let options = {
+        body: JSON.stringify({
+          to: currentActiveUser,
           from: users.user.mobile,
+          message: {
+            message: inputChat.value,
+            date: currentDate,
+            from: users.user.mobile,
+          },
+        }),
+        headers: {
+          "content-type": "application/json",
         },
-      }),
-      headers: {
-        "content-type": "application/json",
-      },
-      method: "POST",
-    };
-    fetch("https://whatsapp-api-login.onrender.com/send", options)
-      .then((resolve) => {
-        return resolve.json();
-      })
-      .then((data) => {
-        //! console.log(data);
-        //! chats map karwayenge
-        handleSingleUser(currentActiveUser);
-        inputChat.value = "";
-      })
-      .catch((error) => {
-        alert(error);
-      });
+        method: "POST",
+      };
+      fetch("https://whatsapp-api-login.onrender.com/send", options)
+        .then((resolve) => {
+          return resolve.json();
+        })
+        .then((data) => {
+          //! console.log(data);
+          //! chats map karwayenge
+          handleSingleUser(currentActiveUser);
+          inputChat.value = "";
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
   }
-});
+
+  function scrollToBottom() {
+    let chatWindow = document.querySelector(".chat");
+    console.log("helloadflajsjfd")
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+  chatBoxInput.addEventListener('keypress',(e)=>{
+    if(e.key === "Enter"){
+      submitChat()
+      scrollToBottom();
+    }
+  })
+  sendBtn.addEventListener("click", submitChat);
