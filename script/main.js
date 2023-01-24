@@ -212,7 +212,7 @@ ans
                   <div class="person-name">
                     <div class="person-name-details" id="${users.user.mobile}">
                       <div class="contact-name" id="contact-name">${users.user.email} (You)</div>
-                      <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()}</div>
+                      <div class="message-time" id="last-message-time">${time.getHours()}:${time.getMinutes()<10 ? "0" + time.getMinutes():time.getMinutes()}</div>
                     </div>
                   </div>
                 </li>`;
@@ -292,38 +292,47 @@ setInterval(() => {
   handleSingleUser(currentActiveUser);
 }, 5000);
 
-sendBtn.addEventListener("click", function (e) {
-  // Api call
-  // message
-  if (inputChat.value != "" && inputChat.value != " ") {
-    let currentDate = new Date();
-    let options = {
-      body: JSON.stringify({
-        to: currentActiveUser,
-        from: users.user.mobile,
-        message: {
-          message: inputChat.value,
-          date: currentDate,
+
+// Submit chat on keypress Enter
+
+function submitChat(){
+    if (inputChat.value != "" && inputChat.value != " ") {
+      let currentDate = new Date();
+      let options = {
+        body: JSON.stringify({
+          to: currentActiveUser,
           from: users.user.mobile,
+          message: {
+            message: inputChat.value,
+            date: currentDate,
+            from: users.user.mobile,
+          },
+        }),
+        headers: {
+          "content-type": "application/json",
         },
-      }),
-      headers: {
-        "content-type": "application/json",
-      },
-      method: "POST",
-    };
-    fetch("https://whatsapp-api-login.onrender.com/send", options)
-      .then((resolve) => {
-        return resolve.json();
-      })
-      .then((data) => {
-        //! console.log(data);
-        //! chats map karwayenge
-        handleSingleUser(currentActiveUser);
-        inputChat.value = "";
-      })
-      .catch((error) => {
-        alert(error);
-      });
+        method: "POST",
+      };
+      fetch("https://whatsapp-api-login.onrender.com/send", options)
+        .then((resolve) => {
+          return resolve.json();
+        })
+        .then((data) => {
+          //! console.log(data);
+          //! chats map karwayenge
+          handleSingleUser(currentActiveUser);
+          inputChat.value = "";
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    }
   }
-});
+
+  chatBoxInput.addEventListener('keypress',(e)=>{
+    if(e.key === "Enter"){
+      submitChat()
+      console.log("hello")
+    }
+  })
+  sendBtn.addEventListener("click", submitChat());
