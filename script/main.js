@@ -207,7 +207,7 @@ ans
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
                   <div class="person-img-details">
-                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%;">
+                    <img src="${users.user.avatar}" class= "avatar" alt="contact" width="55px" height="55px" style="border-radius:50%;">
                   </div>
                   <div class="person-name">
                     <div class="person-name-details" id="${users.user.mobile}">
@@ -269,11 +269,11 @@ function handleSingleUser(user, typee) {
       let chat = JSON.parse(data[0].message);
       //! console.log(users);
        console.log(chat);
-      chat.map((ele) => {
+      chat.map((ele, index) => {
         console.log(ele);
-        chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
-        <span class="chat-time"> </span>`
-        
+        let date = new Date(ele.date);
+          chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
+          <span class="chat-time"> ${date.getHours()} : ${date.getMinutes()}  </span>` 
       });
       // chat.scrollBy(0, 1000);
     })
@@ -281,8 +281,6 @@ function handleSingleUser(user, typee) {
       console.log(error);
     });
 }
-//    <div class="recieve-chat"><span id="recieve-chat"></span></div>
-/* <div class="send-chat"><span id="sent-chat"></span></div> */
 
 //x   Message send and recieve
 const sendBtn = document.getElementById("send-btn");
@@ -335,4 +333,4 @@ function submitChat(){
       console.log("hello")
     }
   })
-  sendBtn.addEventListener("click", submitChat());
+  sendBtn.addEventListener("click", submitChat);
