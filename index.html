@@ -108,7 +108,7 @@
         <div class="profile-name">
           <p class="name">Your name</p>
           <div class="profile-user_name">
-            <p id="user-name"> <!--JScode--> </p>
+            <p id="user-name"> <!--JScode--></p>
             <p class="edit">
               <span data-testid="pencil" data-icon="pencil" class="NameChange"><svg viewBox="0 0 24 24" height="24"
                   width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px"
@@ -116,7 +116,8 @@
                   <path fill="#8696a0"
                     d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z">
                   </path>
-                </svg></span>
+                </svg>
+              </span>
             </p>
           </div>
           <!--                                                             x NAME & ABOUT SHOW BOX/ INPUT BOX                                                  -->
@@ -162,13 +163,13 @@
             <div class="about-info">
               <p id="about-info_text""><!--JScode--></p>
               <p>
-                <span data-testid="pencil" data-icon="pencil" class="about-pencil">
-                  <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class=""
-                    version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
-                    <path fill="#8696a0"
-                      d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z">
-                    </path>
-                  </svg>
+                <span data-testid=" pencil" data-icon="pencil" class="about-pencil">
+                <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class=""
+                  version="1.1" x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
+                  <path fill="#8696a0"
+                    d="M3.95,16.7v3.4h3.4l9.8-9.9l-3.4-3.4L3.95,16.7z M19.75,7.6c0.4-0.4,0.4-0.9,0-1.3 l-2.1-2.1c-0.4-0.4-0.9-0.4-1.3,0l-1.6,1.6l3.4,3.4L19.75,7.6z">
+                  </path>
+                </svg>
                 </span>
               </p>
             </div>
@@ -291,7 +292,9 @@
               <div class="person-img-details">
                 <img src="" alt="" />
               </div>
-              <div class="person-name current-chat"></div>
+              <div class="person-name current-chat">
+                
+              </div>
             </div>
             <div class="option">
               <div class="chat-search">
@@ -312,10 +315,11 @@
               </div>
             </div>
           </div>
+          <!-- x                       chats starts here                        -->
           <div class="chat">
             <div class="chat-initial">
-              <div class="">
-                <div class="today-span"><span>TODAY</span></div>
+              <div class="fixed">
+                <div class="today-span">TODAY</div>
               </div>
               <div class="encryption-msg">
                 <div class="lock-svg">
@@ -334,8 +338,15 @@
                 </div>
               </div>
             </div>
+
+           <div class="append-chat">
+             <!-- <div class="recieve-chat"><span id="recieve-chat">hello</span></div>
+            <div class="send-chat"><span id="sent-chat">hiiii</span></div> -->
+           </div>
+
           </div>
         </div>
+
         <!--*                                                CHAT BOX BOTTOM STARTS HERE                                 -->
         <div class="chatbox-bottom">
           <div class="emoji-attach">
@@ -360,7 +371,7 @@
           <div class="input">
             <input type="text" name="chat" id="chatbox-input" placeholder="Type a Message">
           </div>
-          <span class="send-btn">
+          <span class="send-btn" id="send-btn">
             <svg viewBox="0 0 24 24" height="24" width="24" preserveAspectRatio="xMidYMid meet" class="" version="1.1"
               x="0px" y="0px" enable-background="new 0 0 24 24" xml:space="preserve">
               <path fill="currentColor"
