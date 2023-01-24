@@ -360,14 +360,14 @@ input.input-box::placeholder {
   cursor: pointer;
 }
 
-.name-input>input,
+.name-input input,
 .about-text input {
   outline: none;
   border: none;
   padding: 0 10px;
-  width: 250px;
   font-size: 1.2rem;
   color: #8696a0;
+  min-width: max-content;
 }
 
 .warn {

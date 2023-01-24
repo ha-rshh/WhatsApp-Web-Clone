@@ -202,7 +202,7 @@ ans
       (elem) => elem.email != users.user.email
     );
     const time = new Date(users.user.date);
-
+    document.getElementById('user-name').innerText = users.user.email;
     document.getElementById(
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
