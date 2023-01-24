@@ -197,7 +197,6 @@ ans
     return res.json();
   })
   .then((result) => {
-    //! console.log(result);
     let contacts = result.usersList.filter(
       (elem) => elem.email != users.user.email
     );
@@ -207,7 +206,7 @@ ans
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
                   <div class="person-img-details">
-                    <img src="${users.user.avatar}" class= "avatar" alt="contact" width="55px" height="55px" style="border-radius:50%;">
+                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%; object-fit: cover">
                   </div>
                   <div class="person-name">
                     <div class="person-name-details" id="${users.user.mobile}">
@@ -216,6 +215,7 @@ ans
                     </div>
                   </div>
                 </li>`;
+
     document.getElementById("contact-list").innerHTML += contacts
       .map((ele) => {
         const dates = new Date(ele.date);
@@ -231,8 +231,7 @@ ans
             }</div>
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
           </div>
-          <div class="person-msg">
-          </div>
+          <div class="person-msg"></div>
         </div>
       </li>`;
       })
@@ -273,25 +272,30 @@ function handleSingleUser(user, typee) {
         console.log(ele);
         let date = new Date(ele.date);
           chatContainer.innerHTML += `<div class="${users.user.mobile === ele.from ? "send-chat" : "recieve-chat"}">${ele.message}
-          <span class="chat-time"> ${date.getHours()} : ${date.getMinutes()}  </span>` 
+          <div class="chat-time"> ${date.getHours()}:${date.getMinutes()}</div>` 
       });
       // chat.scrollBy(0, 1000);
+
     })
     .catch((error) => {
       console.log(error);
     });
 }
 
+
+
+
 //x   Message send and recieve
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
 
-setInterval(() => {
-  handleSingleUser(currentActiveUser);
-}, 5000);
+  // setInterval(() => {
+  //   handleSingleUser(currentActiveUser);
+  
+  // }, 5000);
 
 
-// Submit chat on keypress Enter
+//x Submit chat on keypress Enter
 
 function submitChat(){
     if (inputChat.value != "" && inputChat.value != " ") {
@@ -327,10 +331,16 @@ function submitChat(){
     }
   }
 
+  function scrollToBottom() {
+    let chatWindow = document.querySelector(".chat");
+    console.log("helloadflajsjfd")
+    chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
   chatBoxInput.addEventListener('keypress',(e)=>{
     if(e.key === "Enter"){
       submitChat()
-      console.log("hello")
+      scrollToBottom();
     }
   })
   sendBtn.addEventListener("click", submitChat);
