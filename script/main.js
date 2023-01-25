@@ -6,7 +6,7 @@ const filter = document.querySelector(".filter");
 const filterMsg = document.querySelector(".filter-msg");
 const msgDrop = document.getElementById("msg-drop");
 const contactList = document.querySelector("#contact-list");
-const profilePic = document.querySelector(".profile-img");
+const profilePic = document.querySelector(".profile-pic");
 const profileContainer = document.getElementById("profile-container");
 const profIcon = document.querySelector(".prof-icon");
 const statusIcon = document.querySelector(".status");
@@ -46,7 +46,7 @@ inputBox.addEventListener("click", () => {
   searchIcon.style.color = "#009688";
 });
 
-//x Click on Arrow
+//x Click on Arrow to go back
 
 document.addEventListener("click", (e) => {
   if (e.target.classList.contains("bi")) {
@@ -171,7 +171,6 @@ selectPerson.addEventListener("click", (e) => {
 //x  Search By Name
 
 const li = document.getElementsByClassName("person");
-
 function myFunc(event) {
   const filters = inputBox.value.toUpperCase();
   if (event.key === "Enter") {
@@ -186,14 +185,11 @@ function myFunc(event) {
     }
   }
 }
-
 inputBox.addEventListener("keypress", myFunc);
 
 /* API Integration */
 let ans = fetch("https://whatsapp-api-login.onrender.com/users");
-//! console.log(users.usersList)
-ans
-  .then((res) => {
+ans.then((res) => {
     return res.json();
   })
   .then((result) => {
@@ -220,15 +216,12 @@ ans
       .map((ele) => {
         const dates = new Date(ele.date);
         return `<li class="person" id="person">
-        <div class="person-img-details">
-          <img src="${ele.avatar}" alt="contact1"
-            width="55px" height="55px" style="border-radius:50%; object-fit: cover"">
-        </div>
-        <div class="person-name">
-          <div class="person-name-details" id="${ele.mobile}">
-            <div class="contact-name" id="contact-name" object-fit: cover">${
-              ele.email === users.user.email ? `${ele.email} (You)` : ele.email
-            }</div>
+              <div class="person-img-details">
+               <img src="${ele.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%; object-fit: cover"">
+              </div>
+            <div class="person-name">
+            <div class="person-name-details" id="${ele.mobile}">
+            <div class="contact-name" id="contact-name" object-fit: cover">${ele.email === users.user.email ? `${ele.email} (You)` : ele.email}</div>
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
           </div>
           <div class="person-msg"></div>
@@ -236,6 +229,8 @@ ans
       </li>`;
       })
       .join("");
+      document.querySelector(".current-user").innerHTML = `<img class="profile-picture_img" src="${users.user.avatar}" alt="profile picture">`
+      document.querySelector(".profile-pic").innerHTML = `<img class="profile-picture_img" src="${users.user.avatar}" alt="profile picture">`
   });
 
 const chatContainer = document.querySelector(".append-chat");
