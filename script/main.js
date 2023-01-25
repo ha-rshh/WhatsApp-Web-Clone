@@ -289,10 +289,10 @@ function handleSingleUser(user, typee) {
 const sendBtn = document.getElementById("send-btn");
 const inputChat = document.getElementById("chatbox-input");
 
-  // setInterval(() => {
-  //   handleSingleUser(currentActiveUser);
+  setInterval(() => {
+    handleSingleUser(currentActiveUser);
   
-  // }, 5000);
+  }, 5000);
 
 
 //x Submit chat on keypress Enter
