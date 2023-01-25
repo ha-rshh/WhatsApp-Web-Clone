@@ -206,7 +206,7 @@ ans
       "contact-list"
     ).innerHTML = `<li class="person" id="person">
                   <div class="person-img-details">
-                    <img src="${users.user.avatar}" alt="contact1" width="55px" height="55px" style="border-radius:50%; object-fit: cover">
+                    <img src="${users.user.avatar}" class="avatar' alt="contact" width="55px" height="55px" style="border-radius:50%; object-fit: cover">
                   </div>
                   <div class="person-name">
                     <div class="person-name-details" id="${users.user.mobile}">
@@ -222,11 +222,11 @@ ans
         return `<li class="person" id="person">
         <div class="person-img-details">
           <img src="${ele.avatar}" alt="contact1"
-            width="55px" height="55px" style="border-radius:50%;">
+            width="55px" height="55px" style="border-radius:50%; object-fit: cover"">
         </div>
         <div class="person-name">
           <div class="person-name-details" id="${ele.mobile}">
-            <div class="contact-name" id="contact-name">${
+            <div class="contact-name" id="contact-name" object-fit: cover">${
               ele.email === users.user.email ? `${ele.email} (You)` : ele.email
             }</div>
             <div class="message-time" id="last-message-time">${dates.getHours()}:${dates.getMinutes()}</div>
