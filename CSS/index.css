@@ -636,7 +636,7 @@ background-color:#f0f2f5 ;
 .chat {
   height: 80%;
   width: 100%;
-  z-index: 5555;
+  /* z-index: 5555; */
   scroll-behavior: smooth;
 }
 

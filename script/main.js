@@ -50,7 +50,7 @@ document.addEventListener("click", (event) => {
 
 inputBox.addEventListener("click", () => {
   searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`;
-  searchIcon.style.color = "#009688";
+  searchIcon.style.color = "#009688 ";
 });
 
 //x Click on Arrow to go back
@@ -333,8 +333,7 @@ function submitChat(){
         });
     }
   }
-<<<<<<< HEAD
-});
+// });
 
 //chat search
 
@@ -369,7 +368,6 @@ moreOption.addEventListener("dblclick" , function(){
 
 })
 
-=======
 
   function scrollToBottom() {
     let chatWindow = document.querySelector(".chat");
@@ -384,4 +382,3 @@ moreOption.addEventListener("dblclick" , function(){
     }
   })
   sendBtn.addEventListener("click", submitChat);
->>>>>>> 56488881f1664eff8af33efd47b3d3ab1664412c
