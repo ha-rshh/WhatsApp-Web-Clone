@@ -321,7 +321,7 @@ function submitChat(){
     }
   }
 
-// All Event Listeners
+//x All Event Listeners
 menuBar.addEventListener("click", showManuList);
 document.addEventListener("click", hideMenuList);
 inputBox.addEventListener("click", searchIconChange);
