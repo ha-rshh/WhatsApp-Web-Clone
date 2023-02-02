@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", arial, "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
+  list-style-type: none;
 }
 
 body {
@@ -12,18 +13,9 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #ccc;
 }
 
-.background-green {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #009688;
-}
-
-.main-container {
+/* .main-container {
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -31,50 +23,51 @@ body {
   background: #555;
   display: flex;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
+} */
 
 .left-container {
   position: relative;
   width: 30%;
   height: 100%;
-  flex: 30%;  
 }
-
-
-/* style for icon container */
-
-.profile-pic {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.status-container{
+  display: flex;
+  background-color: #1E262C;
+  height: 100%;
+  padding: 0px 15px;
 }
-
-.profile-img {
+.myStatus{
+  position: relative;
+  top: 50px;
+  display: flex;
+  align-content: center;
   width: 100%;
-  
+  height: fit-content;
+  padding-bottom: 35px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.417);
 }
-
-
- /* Here the styling for Contact list */
-
-.user-status{
-  height: 20vh;
-  width: 100%;
-  background-color: rgb(30,38,44);
+.user-profile-img{
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
+}
+.profile-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+}
+.user-status{
+  width: 100%;
+  display: flex;
+  gap: 15px;
 }
 
-.status-user {
-  width: 20vw;
-  padding-bottom: 20px;
-  border-bottom: thin solid gray; 
-}
+/* Here the styling for Contact list */
 
  .contact-list{
-  height: 80vh;
-  overflow-y:scroll;
+   overflow-x:scroll;
+   /* height: 100%; */
+
   
 }
 .person-chatbox{
@@ -155,4 +148,3 @@ body {
     height: 100%;
     background-color: rgb(11,20,26);
 }
-
