@@ -119,6 +119,7 @@ const userName = document.getElementById("user-name");
 const profileNameInput = document.querySelector(".profile-user-input");
 const checkBtn = document.querySelector(".name-checkBtn");
 
+
 pencil.addEventListener("click", () => {
   profileUserName.style.display = "none";
   userNameInput.value = userName.innerText;
