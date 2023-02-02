@@ -824,7 +824,7 @@ transition: 1s;
   /* background-color:#d8d8def2; */
   background-color: white;
   transition: 5s;
-  border-radius: 10px;
+  border-radius: 5px;
 
 }
 
@@ -846,7 +846,9 @@ transition: 1s;
 background-color: #e7ecec;
 cursor: pointer;
 }
-
+.boxs{
+  border:none;
+outline-style: none;}
 
 .append-chat{
   position: relative;

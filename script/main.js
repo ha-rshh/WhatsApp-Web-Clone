@@ -24,7 +24,8 @@ const moreOption = document.querySelector(".more-option");
 const popUpBtn = document.querySelector(".pop-up-btn");
 const searchForChat = document.querySelector(".chat-search")
 const searchBtn = document.querySelector(".search-box1");
-const bi = document.querySelector(".bi");
+const bi = document.querySelector(".bii");
+
 
 // x clearing userData after logout
 
@@ -163,6 +164,7 @@ selectPerson.addEventListener("click", (e) => {
       rightMost.style.display = "none";
       chatPerson.style.display = "block";
       chatBoxInput.style.display = "flex";
+      // chatBoxInput.style.width = "100%";
       chatpersonImg.src = path[i].querySelector("img").src;
       chatPersonName.innerText =
         path[i].querySelector("#contact-name").innerText;
@@ -341,10 +343,12 @@ searchForChat.addEventListener("click" , function(){
   searchBtn.style.display = "block";
 });
 
-bi.addEventListener("click" , function(){
-  // searchBtn.style.display = "none";
-  console.log(e);
-});
+//searchBtn in right section
+
+bi.addEventListener("click",()=>{
+  searchBtn.style.display = "none";
+  searchForChat.style.display ="visible";
+})
 
 //attach document here
 
@@ -382,3 +386,6 @@ moreOption.addEventListener("dblclick" , function(){
     }
   })
   sendBtn.addEventListener("click", submitChat);
+
+
+  // document.getElementById("chatbox-input").style.width="100%";
