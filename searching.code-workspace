@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../../searching"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "wp Final output"
+	}
+}

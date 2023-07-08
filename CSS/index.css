@@ -542,6 +542,53 @@ input.input-box::placeholder {
   background-blend-mode:multiply;
 }
 
+.search-box1{
+  width: 100%;
+  z-index: 1;
+  display: none;
+  position: absolute;
+  height: 60px;
+  background-color: #f0f2f5;
+
+}
+.search-icon2 {
+  position: absolute;
+  right:30px;
+  top:15px;
+   margin:10px ;
+   fill:#54656f;
+}
+
+.search-icon2 svg{
+   padding-left:20px;
+}
+.boxs {
+  width: 80%;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.input-box2{
+  width: 100%;
+  height: 50px;
+  background-color: #f0f2f5;
+  color: #54656f;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  margin-left:50px;
+padding-left:80px;
+}
+
+.bii{
+padding-top:30px;
+margin:10px;
+position: absolute;
+bottom: 5px;
+background-color:#f0f2f5 ;
+}
 
 .chatbox-head {
   padding: 3px 16px;
@@ -589,7 +636,7 @@ input.input-box::placeholder {
 .chat {
   height: 80%;
   width: 100%;
-  z-index: 5555;
+  /* z-index: 5555; */
   scroll-behavior: smooth;
 }
 
@@ -611,6 +658,18 @@ input.input-box::placeholder {
 .emoji-attach {
   display: flex;
   gap: 20px;
+}
+.emogy , .linkIcon ,.send-btn , .mike ,.more-option, .chat-search{
+  padding:5px;
+
+}
+.emogy:hover,.linkIcon:hover , .send-btn:hover , .mike:hover , .more-option:hover,  .chat-search:hover{
+background-color: #bfc2c3;
+border-radius: 50%;
+}
+
+.chat-search, .more-option{
+  color:rgb(84, 101, 111);
 }
 
 .chatbox-bottom svg {
@@ -724,6 +783,70 @@ input.input-box::placeholder {
   background-color: rgb(255, 255, 255);
 }
 
+.linkHere{
+  background-color: transparent;
+position: relative;
+bottom:200px;
+left: 125px;
+display: none;
+
+}
+.linkHere ul{
+transition: 1s;
+}
+
+.linkHere li {
+  margin:10px ;
+  border-radius: 30px;
+  list-style-type : none;
+
+}
+.linkHere > ul > li > img{
+  height: 60px;
+  width: 60px;
+  border-radius:50%;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0 , 0.4) 5px 5px 5px;
+}
+
+.pop-up-btn{
+  position:relative;
+  display: none;
+  
+}
+
+.pop-up-btn > ul{
+  position: absolute;
+  right:0px;
+  margin: 20px;
+  z-index: 1;
+  width:15rem;
+  background-color: white;
+  transition: 5s;
+  border-radius: 3px;
+
+}
+
+.pop-up-btn ul{
+  list-style-type: none;
+  border-radius: 10px;
+}
+
+.pop-up-btn li{
+  padding:  15px 30px;
+  align-items: center;
+  display: flex;
+  /* gap: 20px; */
+  color:rgb(75, 73, 73);
+}
+
+.pop-up-btn ul li:hover{
+background-color: #e7ecec;
+cursor: pointer;
+}
+.boxs{
+  border:none;
+outline-style: none;}
 
 .append-chat{
   position: relative;

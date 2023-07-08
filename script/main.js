@@ -17,14 +17,22 @@ const chatpersonImg = document.querySelector(".person-img-details img");
 const chatPersonName = document.querySelector(".person-name");
 const menuBar = document.querySelector("#menu-icon");
 const chatBoxInput = document.querySelector(".chatbox-bottom");
-const userProfile = document.querySelector(".profile-img");
+// const userProfile = document.querySelector(".profile-img");
+const linkIcon = document.querySelector(".linkIcon");
+const linkedHere = document.querySelector(".linkHere");
+const moreOption = document.querySelector(".more-option");
+const popUpBtn = document.querySelector(".pop-up-btn");
+const searchForChat = document.querySelector(".chat-search");
+const searchBtn = document.querySelector(".search-box1");
+const bi = document.querySelector(".bii");
+
 
 // x clearing userData after logout
 
 if (!localStorage.getItem("loggedInUser")) {
   window.location.href = "./loginpage.html";
 }
-const users = JSON.parse(localStorage.getItem("loggedInUser")) || {};
+const users = JSON.parse(localStorage.getItem("loggedInUser"))  || {};
 
 // x Function && Event Listner For MenuBar
 
@@ -43,8 +51,9 @@ function hideMenuList(event){
 
 function searchIconChange(){
   searchIcon.innerHTML = `<i class="bi bi-arrow-left"></i>`;
-  searchIcon.style.color = "#009688";
-}
+  searchIcon.style.color = "#009688 ";
+};
+
 
 //x Click on Arrow to go back
 
@@ -113,6 +122,7 @@ const userName = document.getElementById("user-name");
 const profileNameInput = document.querySelector(".profile-user-input");
 const checkBtn = document.querySelector(".name-checkBtn");
 
+
 function editName(){
   profileUserName.style.display = "none";
   userNameInput.value = userName.innerText;
@@ -143,7 +153,7 @@ function saveAbout(){
   aboutInfo.style.display = "flex";
   aboutInput.style.display = "none";
   aboutInfoText.innerText = aboutNameInput.value;
-}
+};
 
 //x  Contact-List Person Chat-Box //
 
@@ -155,6 +165,7 @@ function showChatBox(e){
       rightMost.style.display = "none";
       chatPerson.style.display = "block";
       chatBoxInput.style.display = "flex";
+      // chatBoxInput.style.width = "100%";
       chatpersonImg.src = path[i].querySelector("img").src;
       chatPersonName.innerText =
         path[i].querySelector("#contact-name").innerText;
@@ -232,6 +243,7 @@ ans.then((res) => {
       document.querySelector(".profile-pic").innerHTML = `<img class="profile-picture_img" src="${users.user.avatar}" alt="profile picture">`
   });
 
+  
 const chatContainer = document.querySelector(".append-chat");
 function handleSingleUser(user, typee) {
   // Api call.
@@ -320,6 +332,43 @@ function submitChat(){
         });
     }
   }
+// });
+
+//chat search
+
+searchForChat.addEventListener("click" , function(){
+  searchBtn.style.display = "block";
+});
+
+//searchBtn in right section
+
+bi.addEventListener("click",()=>{
+  searchBtn.style.display = "none";
+  searchForChat.style.display ="visible";
+})
+
+//attach document here
+
+linkIcon.addEventListener('click' , function(){
+  linkedHere.style.display = "block";
+})
+
+linkIcon.addEventListener('dblclick' , function(){
+  linkedHere.style.display = "none";
+
+})
+
+//pop up show in right corner in chat section
+moreOption.addEventListener("click" , function(){
+  popUpBtn.style.display = "block";
+
+})
+
+moreOption.addEventListener("dblclick" , function(){
+  popUpBtn.style.display = "none";
+
+})
+
 
 //x All Event Listeners
 menuBar.addEventListener("click", showManuList);
@@ -354,3 +403,6 @@ statusIcon.addEventListener("click", () => {
     }
   })
   sendBtn.addEventListener("click", submitChat);
+
+
+  // document.getElementById("chatbox-input").style.width="100%";
